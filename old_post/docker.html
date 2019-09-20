@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习笔记,Docker,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Wendell's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="第一本Docker书，笔记">
+<meta name="keywords" content="学习笔记,Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker 基础">
+<meta property="og:url" content="http://blog.wendelltong.xyz/old_post/docker.html">
+<meta property="og:site_name" content="Wendell&#39;s blog">
+<meta property="og:description" content="第一本Docker书，笔记">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190331092255398.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330055728490.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330060116468.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330061710794.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330061801529.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330061334719.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330054651301.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330095946258.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330100409610.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330100347575.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330101048842.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330101952779.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330102636917.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330103240095.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330104008772.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330111921700.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330113423542.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/docker/20190330113605532.png">
+<meta property="og:updated_time" content="2019-03-31T01:56:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker 基础">
+<meta name="twitter:description" content="第一本Docker书，笔记">
+<meta name="twitter:image" content="http://blog.wendelltong.xyz/old_post/docker/20190331092255398.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.wendelltong.xyz/old_post/docker.html">
+
+
+
+
+
+  <title>Docker 基础 | Wendell's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wendell's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.wendelltong.xyz/old_post/docker.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wendell">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wendell's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Docker 基础</h2>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T19:32:16+08:00">
+                2019-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第一本Docker书，笔记<br><a id="more"></a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><ul>
+<li>Docker客户端和服务端</li>
+</ul>
+<p>Docker是c/s 架构的程序，Docker 客户端向Docker服务器或守护进程发送请求，服务器或者守护进程将完成所有工作并返回结果，可以将守护进程和客户端分开，也可以运行在同一宿主机</p>
+<ul>
+<li>镜像</li>
+</ul>
+<p>类似面向对象里的类</p>
+<ul>
+<li>Registry</li>
+</ul>
+<p>Docker利用Registry保存用户构建的镜像，分共有和私用两种</p>
+<p>可以在Docker Hub在注册账号，分享自己的镜像，可以公有也可以私有</p>
+<p>可以自己搭建 registry</p>
+<ul>
+<li>Docker 容器</li>
+</ul>
+<p>类似对象</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>百度-</p>
+<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><h2 id="info-命令"><a href="#info-命令" class="headerlink" title="info 命令"></a>info 命令</h2><p>返回所有容器和镜像的数量，使用的执行驱动和储存驱动。</p>
+<h2 id="help"><a href="#help" class="headerlink" title="help"></a>help</h2><pre><code>docker help run
+或者 man docker-run
+</code></pre><h2 id="容器的运行"><a href="#容器的运行" class="headerlink" title="容器的运行"></a>容器的运行</h2><pre><code>docker run --name hello -i -t ubuntu:15.10 /bin/bash
+</code></pre><p>解析：</p>
+<ul>
+<li>run 表示运行一个容器，</li>
+<li>-i 表示 STDIN 是开启的，即开启持久的标准输入</li>
+<li>-t 表示 为容器分配一个伪tty终端，即提供一个交互式shell</li>
+<li>接下来告诉Docker以什么创建容器，引号后面指定版本，可以不指定，实例使用的是base镜像，如果本机有，直接使用，没有则从仓库拉取</li>
+<li>最后告诉容器运行什么命令，即运行一个交互式shell</li>
+<li>退出shell后容器就会停止运行，因为容器基于bash启动，bash结束，容器结束</li>
+<li>–name 为容器指定一个名字</li>
+<li>-v 将本机目录挂载为容器的一个卷，<img src="/old_post/docker/20190331092255398.png" alt><br>前面是本机目录，后面是容器目录<br>可以指定状态，ro，只读，或rw 读写</li>
+</ul>
+<p><img src="/old_post/docker/20190330055728490.png" alt></p>
+<p>使用参数-d 创建守护式容器，后台运行</p>
+<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>列出当前运行的容器<br>加上-a 后，会列出所有，包括已经停止的<br>-l 会列出最后一次运行的容器，包括已停止的的<br>-n 3 列出最后3个容器</p>
+<h3 id="attach"><a href="#attach" class="headerlink" title="attach"></a>attach</h3><pre><code>docker attach id or name
+</code></pre><p>附着到该容器的会话上</p>
+<h3 id="exec-命令"><a href="#exec-命令" class="headerlink" title="exec 命令"></a>exec 命令</h3><p>在容器内部额外启动新进程</p>
+<h4 id="运行一个后台进程"><a href="#运行一个后台进程" class="headerlink" title="运行一个后台进程"></a>运行一个后台进程</h4><pre><code>docker exec -d  name touch /ect/new_file
+</code></pre><h4 id="前台"><a href="#前台" class="headerlink" title="前台"></a>前台</h4><pre><code>docker exec -t -t name  /bin/bash
+</code></pre><h3 id="logs"><a href="#logs" class="headerlink" title="logs"></a>logs</h3><pre><code>docker logs name or id 
+</code></pre><p>获取容器的日志</p>
+<p>可以添加-f参数 来一直监控Docker的日志<br>-t 参数，为日志加上时间戳<br><img src="/old_post/docker/20190330060116468.png" alt></p>
+<h3 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h3><p>用法同上，查看容器的进程</p>
+<h3 id="inspect-命令"><a href="#inspect-命令" class="headerlink" title="inspect 命令"></a>inspect 命令</h3><p>获取容器信息，<img src="/old_post/docker/20190330061710794.png" alt><br><img src="/old_post/docker/20190330061801529.png" alt></p>
+<h2 id="启动与关闭"><a href="#启动与关闭" class="headerlink" title="启动与关闭"></a>启动与关闭</h2><pre><code>docker start container_name或者id
+</code></pre><p>运行一个已经停止的容器，<br>restart命令，重新运行一个新容器</p>
+<h2 id="stop-命令"><a href="#stop-命令" class="headerlink" title="stop 命令"></a>stop 命令</h2><pre><code>使用stop命令，可以停止守护进程，向容器发送STGERM信号
+快速停止使用 kill 命令，发送SIGKILL信号
+</code></pre><h2 id="restart-标志"><a href="#restart-标志" class="headerlink" title="restart 标志"></a>restart 标志</h2><p>  自动重启容器<br> <img src="/old_post/docker/20190330061334719.png" alt></p>
+<p> always 表示无论退出代码是什么，都自动重启，标志还有on-failure 表示只有退出代码非0才会自动重启，可以接受一个可选参数 on-failure:3 </p>
+<h2 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h2><p>删除容器</p>
+<pre><code>docker rm `docker ps -a -q`
+</code></pre><p> 删除所有容器，-表示只返回容器id</p>
+<h2 id="容器内基本使用"><a href="#容器内基本使用" class="headerlink" title="容器内基本使用"></a>容器内基本使用</h2><ul>
+<li>hostname<br>在容器内的shell使用，查看容器的id</li>
+<li>cat /etc/hosts</li>
+<li>ip a </li>
+<li>ps -aux </li>
+<li><img src="/old_post/docker/20190330054651301.png" alt></li>
+<li>exit 或者ctrl—+d 退出容器</li>
+</ul>
+<h1 id="Docker-镜像和仓库"><a href="#Docker-镜像和仓库" class="headerlink" title="Docker 镜像和仓库"></a>Docker 镜像和仓库</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><ul>
+<li>Docker 镜像由文件系统叠加而成，利用联合加载（union mount），这些文件系统称之为镜像，镜像启动容器时会在在最顶层加载一个文件读写系统，</li>
+<li>写时复制，文件系统的变化只应用在读写层，底层不变，</li>
+</ul>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ul>
+<li>列出镜像<pre><code>docker images
+</code></pre>本地镜像都在/var/lib/docker 目录下<br>容器在/var/lib/docker/containers</li>
+</ul>
+<p>镜像从仓库下载而来，仓库在registry ，默认的registry是Docker Hub<br>可以自建</p>
+<ul>
+<li>拉去镜像<ul>
+<li>可以直接运行（run），自动拉去，<br>  如果为指定标签，会自动下载:latest标签的镜像</li>
+<li>也可以使用pull命令提前拉去<br>docker pull ubuntu<br>会拉取这个仓库下所有镜像，利用docker pull ubuntu：12.10 标签特定的镜像层</li>
+</ul>
+</li>
+</ul>
+<p>docker有两种仓库</p>
+<ul>
+<li>用户仓库<br>  -由用户名/仓库名   组成</li>
+<li><p>顶层仓库<br>  只包含仓库名，右Docker和特定厂商管理</p>
+</li>
+<li><p>查找镜像</p>
+<p>  docker search ubuntu<br>  查找Docker上所有公共可用的镜像，</p>
+</li>
+</ul>
+<h3 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h3><blockquote>
+<p>我们不是真正 的构建镜像，只是从已有的基础镜像，构建新镜像而且，如果像构建一个全新的镜像，参考<img src="/old_post/docker/20190330095946258.png" alt></p>
+</blockquote>
+<p>####</p>
+<p>在Docker hub 创建账号</p>
+<p>使用docker login 命令在本地登录，登录后的个人信息会在$HOME/.dockercfg中</p>
+<p>可以使用 docker inspect 命令查看新创建爱的镜像的详细信息</p>
+<h4 id="docker-commit-命令"><a href="#docker-commit-命令" class="headerlink" title="docker commit 命令"></a>docker commit 命令</h4><p>不推荐<br>先利用镜像创建一个容器，在容器内更改<img src="/old_post/docker/20190330100409610.png" alt></p>
+<p><img src="/old_post/docker/20190330100347575.png" alt></p>
+<h4 id="利用Dockerfile构建镜像"><a href="#利用Dockerfile构建镜像" class="headerlink" title="利用Dockerfile构建镜像"></a>利用Dockerfile构建镜像</h4><blockquote>
+<p>推荐这种方式，基于DSL语法的指令构建镜像，之后利用Docker build 命令构建一个新镜像，便于修改。</p>
+</blockquote>
+<p>在一个目录下创建一个Dockerfile文件</p>
+<p><img src="/old_post/docker/20190330101048842.png" alt></p>
+<ul>
+<li>Dockerfile由一系列指令和参数构成，指令必须大写，后面会跟一个参数，每条指令都会创建一个新的镜像层，并对镜像提交，如果其中一步构建失败，可以使用最后构建 的镜像进行调试</li>
+<li>默认run指令会在shell里使用.bin.sh -c 执行，可以使用exec格式的run指令，<img src="/old_post/docker/20190330101952779.png" alt>，将在bash中执行<br>EXPOSE 指令，告诉DOCker容器内应用程序要使用的端口，Docker不会在创建容器时自动打开，需要在run指令中指定</li>
+<li>可以使用多个EXPOSE 指令指定多个端口</li>
+</ul>
+<p>使用<br>docker bulid 命令，Dockerfile中的所有指令都会被执行提交，并返回一个新镜像，可以使用-t=“仓库名/镜像名：标签”，如果没有定制标签，会使用latest标签<br>上述代码会自动在当前目录寻找一个Dockerfile文件，可以指定git仓库，在其中寻找<br><img src="/old_post/docker/20190330102636917.png" alt></p>
+<ul>
+<li>如果指令失败</li>
+</ul>
+<p>可以使用run指令 访问最后一次成功，查找原因</p>
+<ul>
+<li>每一步构建都会缓存，方便修改后直接从成功的那一步开始，可以在bulid命令上加上 –no–cache 忽略构建 的缓存<br>-使用相同的指令集模板，尽可能确保缓存命中<br><img src="/old_post/docker/20190330103240095.png" alt><br>MAINTAINER 设置联系方式<br>ENV　新的环境变量，例子中表示模板的最后更新时间，可以利用这个刷新一个构建，解决ａｐｔ－ｇｅｔ　ｕｐｄａｔｅ　更新问题</li>
+</ul>
+<p>－　docker　history 命令，查看一个镜像如何被构建出来</p>
+<ul>
+<li>注意启动容器时需要一个前台进程，不然容器会被结束<br><img src="/old_post/docker/20190330104008772.png" alt><br>前面是宿主机的端口，后面是容器的，只写一个随机分配一个高端口，可以在端口后加上/udp 是端口使用udp协议，默认tcp，可以在端口前加入ip地址绑定ip<ul>
+<li>还可以使用 -P 参数，将Dockerfile里EXPOSE的端口以随机高端口的方式暴露</li>
+</ul>
+</li>
+<li>可以通过 port con_name 80 查看映射的端口</li>
+</ul>
+<h4 id="Docker指令"><a href="#Docker指令" class="headerlink" title="Docker指令"></a>Docker指令</h4><ul>
+<li>CMD 加命令的语法童RUN， 镜像被运行为容器时执行的命令，类似docker run后面的参数，会被run命令最后面的参数覆盖，只能有一条</li>
+<li><p>ENTRYPONT  不会被run覆盖，将run的参数在作为参数传递给ENTRYPOINT，如果确实需要，可以使用run 的–entrypoint 标志覆盖ENTRYPOINT命令</p>
+</li>
+<li><p>WORKDIR 指定创建新容器时，内部的工作目录，CMD或ENTRYPOINT 指定的程序会在这个目录执行，可以利用run的-w参数指定新目录覆盖原目录，</p>
+</li>
+<li><p>ENV 指令</p>
+<ul>
+<li>添加环境变量，会被添加到容器中</li>
+<li>可以在RUN中直接使用，可以利用反斜线使用原值</li>
+<li>在Dockerfile使用需要加$，</li>
+</ul>
+</li>
+<li>USER 指令<ul>
+<li>指定使用的用户组，默认root</li>
+<li>可以在run中使用 -u选项覆盖</li>
+</ul>
+</li>
+<li>VOLUME 向基于镜像创建的容器添加卷，实现文件在容器间共享和重用，卷会一直存在到没有容器使用</li>
+<li>ADD 命令 将构建环境下的文件和目录复制到镜像中，如果以/结尾，则复制整个目录，只能使用构建上下文的文件，可以使用url，如果是归档文件，指定为目录，可以自动解包，<img src="/old_post/docker/20190330111921700.png" alt></li>
+<li>COPY命令　同ＡＤＤ　，不过不做文件提去和解压</li>
+<li>ＯＮＢＵＬＬＤ　能为镜像添加触发器，后面根ＲＵＮ等命令，当此镜像要作为其他镜像的父镜像时，触发器的内的代码会执行，作为祖先镜像则不会</li>
+</ul>
+<h4 id="推送到Hub"><a href="#推送到Hub" class="headerlink" title="推送到Hub"></a>推送到Hub</h4><p>用户名/仓库名<br><img src="/old_post/docker/20190330113423542.png" alt></p>
+<ul>
+<li>可以利用Dockerfile自动构建</li>
+<li><img src="/old_post/docker/20190330113605532.png" alt></li>
+</ul>
+<h3 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h3><p>docker rmi 删除一个镜像<br>docker rm 删除容器</p>
+<h3 id="运行自己的Registry"><a href="#运行自己的Registry" class="headerlink" title="运行自己的Registry"></a>运行自己的Registry</h3><p>docker run -p 5000:5000 registry</p>
+<p>上传镜像，在镜像明前加上主机名和端口</p>
+<h3 id="容器连接"><a href="#容器连接" class="headerlink" title="容器连接"></a>容器连接</h3><ul>
+<li>利用端口连接</li>
+<li><p>Docker自己的网络栈</p>
+<ul>
+<li>Docker会自己创建一个网络借口，docker0，可以使用ip a show dpcker0 查看，问题，容器重启后ip会变，解决，利用docker 的容器互联，docker自动更新ip</li>
+</ul>
+<ul>
+<li>docker 容器互联<ul>
+<li>在父容器加上–link：别名选项,指定一个要连接的容器，要连接的容器可以不映射端口，</li>
+<li>利用host ，里面的别名指定了ip，或者env环境变量，在容器内访问，可以利用–dns 标志网为容器单独配置dns</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/old_post/git笔记.html" rel="next" title="git笔记">
+                <i class="fa fa-chevron-left"></i> git笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/old_post/Djang部署教程.html" rel="prev" title="Djang部署教程">
+                Djang部署教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzgwMC8yMDMzOQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wendell</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tongweigii@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心组件"><span class="nav-number">1.1.</span> <span class="nav-text">核心组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本使用"><span class="nav-number">2.</span> <span class="nav-text">基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#info-命令"><span class="nav-number">2.1.</span> <span class="nav-text">info 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#help"><span class="nav-number">2.2.</span> <span class="nav-text">help</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器的运行"><span class="nav-number">2.3.</span> <span class="nav-text">容器的运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理"><span class="nav-number">2.4.</span> <span class="nav-text">管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-number">2.4.1.</span> <span class="nav-text">ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#attach"><span class="nav-number">2.4.2.</span> <span class="nav-text">attach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec-命令"><span class="nav-number">2.4.3.</span> <span class="nav-text">exec 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运行一个后台进程"><span class="nav-number">2.4.3.1.</span> <span class="nav-text">运行一个后台进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前台"><span class="nav-number">2.4.3.2.</span> <span class="nav-text">前台</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logs"><span class="nav-number">2.4.4.</span> <span class="nav-text">logs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top命令"><span class="nav-number">2.4.5.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inspect-命令"><span class="nav-number">2.4.6.</span> <span class="nav-text">inspect 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动与关闭"><span class="nav-number">2.5.</span> <span class="nav-text">启动与关闭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stop-命令"><span class="nav-number">2.6.</span> <span class="nav-text">stop 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#restart-标志"><span class="nav-number">2.7.</span> <span class="nav-text">restart 标志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm命令"><span class="nav-number">2.8.</span> <span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器内基本使用"><span class="nav-number">2.9.</span> <span class="nav-text">容器内基本使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-镜像和仓库"><span class="nav-number">3.</span> <span class="nav-text">Docker 镜像和仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#是什么"><span class="nav-number">3.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构建镜像"><span class="nav-number">3.2.1.</span> <span class="nav-text">构建镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-commit-命令"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">docker commit 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用Dockerfile构建镜像"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">利用Dockerfile构建镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker指令"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">Docker指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送到Hub"><span class="nav-number">3.2.1.4.</span> <span class="nav-text">推送到Hub</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除镜像"><span class="nav-number">3.2.2.</span> <span class="nav-text">删除镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行自己的Registry"><span class="nav-number">3.2.3.</span> <span class="nav-text">运行自己的Registry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器连接"><span class="nav-number">3.2.4.</span> <span class="nav-text">容器连接</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wendell</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">49.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<br>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("03/15/2019 10:22:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?05d599349e61768582010a6d33f2c57b":"https://jspassport.ssl.qhimg.com/11.0.1.js?05d599349e61768582010a6d33f2c57b";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

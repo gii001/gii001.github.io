@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习笔记,vscode,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Wendell's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="vs code 使用教程">
+<meta name="keywords" content="学习笔记,vscode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vs code 使用教程">
+<meta property="og:url" content="http://blog.wendelltong.xyz/Ctf_web/vc code使用教程.html">
+<meta property="og:site_name" content="Wendell&#39;s blog">
+<meta property="og:description" content="vs code 使用教程">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://blog.wendelltong.xyz/images/vc%20code使用教程/image-20190807173222289.png">
+<meta property="og:updated_time" content="2019-08-08T14:33:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vs code 使用教程">
+<meta name="twitter:description" content="vs code 使用教程">
+<meta name="twitter:image" content="http://blog.wendelltong.xyz/images/vc%20code使用教程/image-20190807173222289.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.wendelltong.xyz/Ctf_web/vc code使用教程.html">
+
+
+
+
+
+  <title>vs code 使用教程 | Wendell's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wendell's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.wendelltong.xyz/Ctf_web/vc code使用教程.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wendell">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wendell's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">vs code 使用教程</h2>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-28T23:20:02+08:00">
+                2019-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂/" itemprop="url" rel="index">
+                    <span itemprop="name">杂</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  7.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  26
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>vs code 使用教程</p>
+<a id="more"></a>
+<h1 id="常见操作"><a href="#常见操作" class="headerlink" title="常见操作"></a>常见操作</h1><p>黑苹果对应mac的键(</p>
+<p>Ctrl —cmd</p>
+<p>Win-ctrl</p>
+<p>Alt-option</p>
+<p>)</p>
+<p><img src="/Ctf_web/../../images/vc code使用教程/image-20190807173222289.png" alt="image-20190807173222289"></p>
+<h1 id="基础理论"><a href="#基础理论" class="headerlink" title="基础理论"></a>基础理论</h1><h2 id="学习编辑器-在学什么"><a href="#学习编辑器-在学什么" class="headerlink" title="学习编辑器,在学什么"></a>学习编辑器,在学什么</h2><ul>
+<li>学习编程语言举例<ul>
+<li>​    开始,不熟悉编程语言,找一本官方手册,事无巨细的学习一遍,</li>
+<li>掌握后,学习新的编程语言,不能同第一遍一样,<ul>
+<li>其实编程语言在设计上大同小异，新的编程语言往往都是在解决老的语言的某一个短板，但他们在最本质的设计上不会有大的变化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>学习编辑器<ul>
+<li>你关心的应该是它能用来做什么，它最擅长做什么，以及它做不了什么，就是这个工具的“下限”和“上限”。</li>
+<li><strong>首先，我们一起来找下编辑器或者 IDE 的“下限”</strong>。<ul>
+<li><strong>快捷键的选用</strong><ul>
+<li>VS Code 的做法是搭配组合辅助键 Ctrl、Alt 和 Meta 键，然后根据当前用户正在使用的组件来决定是什么功能</li>
+<li>Vim 则是运用了“模态”的概念，把输入文本信息，和光标移动、文本操作等分开为不同的模态，不同模态各有一套自己的快捷键。</li>
+</ul>
+</li>
+<li><strong>编程语言与框架支持</strong></li>
+<li><strong>对工作流的选择和支持</strong></li>
+</ul>
+</li>
+<li><strong>说完“下限”，我们再接着来说说编辑器的“上限”</strong>。<ul>
+<li>编辑器支持用户写插件来定制功能，那它的“上限”就很高了</li>
+<li>但扩展编辑器这个事情，由于最终还是要落实到社区和个人，真正能达到的高度就很难说了。<ul>
+<li>Eclipse 插件开发语言 Java,插件运行在主进程中,插件影响ide性能</li>
+<li>Atom VS code -语言是JavaScript</li>
+<li>Emacs插件适Lisp,Vim是VimL</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三步走的演变过程<ul>
+<li>最开始的时候，我特别关心快捷键和语言支持，在这上面花了很多时间，这个过程就像是打怪升级，不断更新自己的装备库；</li>
+<li>再往后，我就会开始挑剔编辑器的其他组件，但凡是跟自己的工作习惯或者工作流不匹配的，就会想办法换掉它，这是个做减法的过程；</li>
+<li>最后一步，就是自己学习写插件了，编辑器本身的功能和社区不能够完全满足自己的需求，本着“麻烦别人不如磨炼自己”的精神，我开始自己动手。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="vs-code-why-how-what"><a href="#vs-code-why-how-what" class="headerlink" title="vs code why,how,what"></a>vs code why,how,what</h2><ul>
+<li><p>定位:编辑器,但又不局限与此</p>
+</li>
+<li><p>设计思路</p>
+<ul>
+<li>vs code 的发展轨迹<ul>
+<li>2011 年底，微软从 IBM 请来了 Erich Gamma,希望他能够打造一款在线的开发工具，让开发者们能够在浏览器里获得 IDE 般的开发体验2015 年，Erich Gamma 带领团队把 Monaco Editor 移植到桌面平台上，也就是这个专栏的主角 Visual Studio Code，即 VS Code。</li>
+</ul>
+</li>
+<li>开源与开放的平台<ul>
+<li><strong>首先，VS Code 的源代码以 MIT 协议开源</strong></li>
+<li><strong>其次，开发过程和反馈渠道的开放</strong>。</li>
+<li><strong>再次，接口的开放</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>VS Code 学习指南</p>
+<ul>
+<li>核心编辑器的使用。</li>
+<li>工作台、工作区的使用</li>
+<li>VS Code 定制和插件开发。</li>
+</ul>
+<h2 id="上手vs-code"><a href="#上手vs-code" class="headerlink" title="上手vs code"></a>上手vs code</h2></li>
+<li><p>“学习”区域的三个功能：</p>
+<ul>
+<li><p>命令 面板</p>
+<ul>
+<li>Cmd+Shift+P 或 F1</li>
+<li>命令面板中快速搜索命令并且执行,,绝大多数命令都可以在命令面板里搜到</li>
+</ul>
+</li>
+<li><ol start="2">
+<li>界面概览</li>
+</ol>
+<ul>
+<li>VS Code 默认界面里的不同部件的位置、名称和快捷键。</li>
+</ul>
+</li>
+<li><ol start="3">
+<li>交互式演习场</li>
+</ol>
+<ul>
+<li>全英文的初学者教程</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>命令行的使用</p>
+<ul>
+<li>安装后打开命令面板，搜索<code>Shell 命令：在 PATH 中安装 “Code” 命令</code>并执行，然后重启终端模拟就可以了。</li>
+<li>code —help  显示帮助<ul>
+<li>最基本的命令行使用方式是在 <code>code</code> 命令后加上文件或者文件夹的地址，这样VS Code 就会在一个新窗口中打开这个文件或文件夹。,如果希望使用已打开的窗口打开,加上-r参数</li>
+<li>参数 <code>-g &lt;file:line[:character]&gt;</code> 打开文件，然后滚动到文件中某个特定的行和列，比如输入 <code>code -r -g package.json:128</code>命令，你就可以打开 package.json 这个文件，然后自动跳转到 128 行,可以用于错误定位</li>
+<li>只需使用 <code>-d</code>参数，并传入两个文件路径，比如输入 <code>code -r -d a.txt b.txt</code>命令，就可以比较a.txt和b.txt两个文件的内容了</li>
+<li>也接受来自管道中的数据,此时只需使用<code>ls | code -</code>命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="如何双手不离开键盘"><a href="#如何双手不离开键盘" class="headerlink" title="如何双手不离开键盘"></a>如何双手不离开键盘</h2><h3 id="键盘操作：光标的移动、文本的选择、文本的删除，以及如何为编辑器命令绑定快捷键"><a href="#键盘操作：光标的移动、文本的选择、文本的删除，以及如何为编辑器命令绑定快捷键" class="headerlink" title="键盘操作：光标的移动、文本的选择、文本的删除，以及如何为编辑器命令绑定快捷键"></a>键盘操作：<strong>光标的移动、文本的选择、文本的删除，以及如何为编辑器命令绑定快捷键</strong></h3><ul>
+<li>光标的移动<ul>
+<li><strong>针对单词的光标移动</strong><ul>
+<li>一个单词一个单词的移动,</li>
+<li>光标直接移动到整个单词的前面,Option(alt)（Windows 上是 Ctrl 键）和左方向键。相反，如果要把光标移动到单词的末尾，只需要按下 Option 和右方向键就好了。</li>
+</ul>
+</li>
+<li><strong>第二种方式是把光标移动到行首或者行末</strong><ul>
+<li>使用cmd(ctrl)键,左右方向键,window上是home和end键</li>
+</ul>
+</li>
+<li><strong>对于代码块的光标移动</strong><ul>
+<li>Cmd + Shift + \（Windows 上是 Ctrl + Shift + \），就可以在这对花括号之间跳转。</li>
+</ul>
+</li>
+<li><strong>移动到文档的第一行或者最后一行</strong><ul>
+<li>Cmd 和上下方向键即可（Windows 上是 Ctrl + Home/End 键）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>文本选择<ul>
+<li>你只需要多按一个 Shift 键，就可以在移动光标的同时选中其中的文本。</li>
+</ul>
+</li>
+<li>删除操作<ul>
+<li>先选中,在按删除键</li>
+<li>Cmd 和 Backspace(Delete),删除左侧(右侧)所有内容</li>
+<li>option和 Backspace(Delete),删除左侧(右侧)单词</li>
+<li>按下 “ Cmd + Shift + K ” (Windows 上是 “Ctrl + Shift + K”)，当前代码行就可以被删除了。</li>
+</ul>
+</li>
+<li>剪贴<ul>
+<li>剪切代码 Cmd + x ” (Windows 上是 “Ctrl + x”) 即可</li>
+</ul>
+</li>
+<li>自定义快捷键</li>
+</ul>
+<h3 id="快捷键进阶"><a href="#快捷键进阶" class="headerlink" title="快捷键进阶"></a>快捷键进阶</h3><ul>
+<li>代码行编辑。<ul>
+<li>你想在当前行的下面新开始一行时，你只需按下 “Cmd + Enter” （Windows 上是 “Ctrl + Enter”）；而当你想在当前行的上面新开始一行时，你只要按下 “Cmd + Shift + Enter” （Windows 上是 “Ctrl + Shift + Enter”）就行了。</li>
+<li>移动一段代码时，一般你可能会分三步走：先选中，再剪切，最后粘贴。不过我更喜欢的是按住 “Option + 上下方向键”（Windows中就是“Alt + 上下方向键”） ，将当前行，或者当前选中的几行代码，在编辑器里上下移动。</li>
+</ul>
+</li>
+<li>编程语言相关命令<ul>
+<li>添加注释<ul>
+<li>注释一行代码 Cmd + / ” （Windows 上时 “Ctrl + /”）</li>
+<li>如果你需要把一整段代码注释掉，按下 “ Option + Shift + A”即可。</li>
+</ul>
+</li>
+<li>代码格式化<ul>
+<li>Option + Shift + F” （Windows 上是 Alt + Shift + F）来对整个文档进行格式</li>
+<li>也可以选中一段代码，然后按下 “Cmd + K Cmd + F” （Windows 上是 Ctrl + K Ctrl + F），对选中代码格式化</li>
+</ul>
+</li>
+<li>代码缩进<ul>
+<li>搜索 “缩进”，然后使用 “重新缩进行” 将整个文档的缩进进行调整，但更多时候，你只需要运行 “重新缩进选中行” 来调整部分选中代码行的缩进。</li>
+</ul>
+</li>
+<li>其他<ul>
+<li><strong>第一个是调换字符的位置</strong>。你可以按下 “Ctrl + t” （Windows 上未绑定快捷键，可以打开命令面板，搜索 ”转置游标处的字符“） 来把当前光标前后的字符调换位置。</li>
+<li><strong>第二个是调整字符的大小写</strong>，我估计这个你会经常用到。你可以选中一串字符，然后在命令面板里运行“转换为大写”或 “转换为小写”, 来变换字符的大小写。</li>
+<li><strong>第三个是合并代码行</strong>。有的时候你可能会为了避免代码看起来过于冗余，就会把比较短小的几行代码合并到一行里面去。这时，你只需要按下 “ Ctrl + j ” </li>
+<li><strong>第四个是行排序</strong>。无论是你在写代码，还是写 Markdown，你都可以把代码行按照字母序进行重新排序。不过这个命令比较小众，VS Code 并没有给这个命令指定快捷键，你可以调出命令面板，然后搜索 “按升序排列行” 或者 “按降序排列行” 命令执行。</li>
+<li><strong>第五个是撤销光标的移动和选择</strong>。有的时候你移动完光标之后，又希望把光标回退到上一个位置，这时你只需按下 “Cmd + U”（Windows 上是 “Ctrl + U”），就可以撤销这一次光标的移动。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="多光标特性"><a href="#多光标特性" class="headerlink" title="多光标特性"></a>多光标特性</h3><ul>
+<li><p>创建多个光标</p>
+<ul>
+<li>第一种添加多光标的方式，就是使用鼠标。在键盘上按住 “Option”（Windows 上是 Alt），然后鼠标点在第二个“5”之前，那么第二个光标就创建好了</li>
+<li>使用键盘<ul>
+<li>Cmd + Option + 下方向键”（Windows 上是 “Ctrl + Alt + 下方向键”），在当前光标的下面创建一个光标</li>
+<li>按下 “Cmd + 右方向键”（Windows 上是 End），这样它们就都移动到每一行的末尾了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>创建多光标的两个特别的命令</p>
+<ul>
+<li><h3 id="1-“Cmd-D”"><a href="#1-“Cmd-D”" class="headerlink" title="1. “Cmd + D”"></a>1. “Cmd + D”</h3></li>
+<li><p>你把光标移动到数字“5”之前，按下 “Cmd + D”，这样第一个“5”就被选中了；然后再按一次 “Cmd + D”（Windows 上是 Ctrl + D），你可以看到，第二个“5”也被选中了。</p>
+</li>
+<li><h3 id="2-Option-Shift-i"><a href="#2-Option-Shift-i" class="headerlink" title="2. Option + Shift + i"></a>2. Option + Shift + i</h3><p>首先你选择多行代码，然后按下 “Option + Shift + i” （Windows 上是 Alt + Shift + i），这样操作的结果是：每一行的最后都会创建一个新的光标</p>
+</li>
+</ul>
+</li>
+<li><p>如何快速在文件,符号和代码之间跳转</p>
+<ul>
+<li>文件跳转<ul>
+<li>“Ctrl+Tab”，(alt )键然后继续按着 “Ctrl”键但是松开 “Tab” 键，这样你就可以打开一个文件列表，这个列表罗列了当前打开的所有文件。接下来，你可以通过按下 “Tab”键在这个列表里跳转，选择你想要打开的文件。最后选到你想打开的文件后，松开 “Ctrl” 键，这个文件就被打开了</li>
+<li>“Cmd + P” （Windows 上是 Ctrl + P）时，就会跳出一个最近打开文件的列表，同时在列表的顶部还有一个搜索框,,找到文件后,按Cmd + Enter ” （Windows 上是 Ctrl + Enter）组合键文件在一个新的编辑器</li>
+</ul>
+</li>
+<li>行跳转<ul>
+<li>文件内跳转:按下 “Ctrl + g”，调出行输入框,输入行号跳转</li>
+<li>其他文件的某一行:先按下 “Cmd + P”，输入文件名，然后在这之后加上 “:”和指定行号即可</li>
+</ul>
+</li>
+<li>符号跳转<ul>
+<li>跳转到文件里的类定义，或者函数定义的位置<ul>
+<li>符号之间跳转，你只需按下 “Cmd + Shift + O” </li>
+<li>:对符号进行分类</li>
+<li>如果你打开了多个 JavaScript 文件，就可以按下 “Cmd + T” （Windows 上是 Ctrl + T），搜索这些文件里的符号。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>定义 (Definition) 和实现 (implementation) 跳转<ul>
+<li>按下 F12，就可以跳转到函数的定义处。</li>
+<li>“Cmd + F12” （Windows 上是 Ctrl + F12），跳转到函数的实现的位置</li>
+</ul>
+</li>
+<li>引用 (Reference) 跳转<ul>
+<li>Shift + F12(alt+f12)</li>
+</ul>
+</li>
+<li>Cmd - (win -)跳转回到原来位置</li>
+</ul>
+</li>
+</ul>
+<h3 id="玩转鼠标操作"><a href="#玩转鼠标操作" class="headerlink" title="玩转鼠标操作"></a>玩转鼠标操作</h3><ul>
+<li>文本选择<ul>
+<li>在VS Code中，你单击鼠标左键就可以把光标移动到相应的位置。而双击鼠标左键，则会将当前光标下的单词选中。连续三次按下鼠标左键，则会选中当前这一行代码。最后是连续四次按下鼠标左键，则会选中整个文档。</li>
+<li>如果你单击行号，就能够直接选中这一行。如果你在某个行号上按下鼠标，然后上下移动，则能够选中多行代码。</li>
+</ul>
+</li>
+<li>文本编辑<ul>
+<li>选中 <code>bar</code> 这个函数，然后将鼠标移到这段选中的代码之上，按下鼠标左键不松开。这时你可以看到，鼠标指针已经从一条竖线，变成了一个箭头。这时候我们移动鼠标的话，就可以把这段文本拖拽到我们想要的位置。</li>
+<li>移动鼠标的过程中，多按了个 Option 键（Windows 上是 Ctrl 键），操作结果就由原来的“剪切+粘贴”变为“复制+粘贴”了</li>
+</ul>
+</li>
+<li>多光标<ul>
+<li>按住 Option 键，然后哪里需要点哪里</li>
+<li>你只需按下鼠标中键，然后对着一段文档拖出一个框，在这个框中的代码就都被选中了，而且每一行被选中的代码，都拥有一个独立的光标。</li>
+</ul>
+</li>
+<li>悬停提示窗口</li>
+<li>代码跳转和链接<ul>
+<li>然后按下 Cmd 键，这时候 <code>foo</code>下面出现了一个下划线。然后当我们按下鼠标左键，就跳转到了 <code>foo</code>函数的定义处。</li>
+<li>编写 Markdown 这样的非编程语言的文档时，也可以通过 Cmd + 鼠标左键（Windows 上是 Ctrl + 鼠标左键）来打开超级链接。</li>
+<li>Cmd - 跳转回到原来位置</li>
+</ul>
+</li>
+</ul>
+<h1 id="功能的核心"><a href="#功能的核心" class="headerlink" title="功能的核心"></a>功能的核心</h1><h2 id="代码自动补全和重构"><a href="#代码自动补全和重构" class="headerlink" title="代码自动补全和重构"></a>代码自动补全和重构</h2><h4 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h4><ul>
+<li>Tab 键或者回车键就可以将其补全。</li>
+<li>可以按下 Escape()esc 键将其隐藏。后续如果希望再次看到这个窗口，除了通过打字来将其调出以外，我们还可以按下 “Ctrl + 空格键”来手动地调出建议列表</li>
+</ul>
+<h4 id="快速预览"><a href="#快速预览" class="headerlink" title="快速预览"></a>快速预览</h4><ul>
+<li>Ctrl+空格键”组合键来快速调出这个快速预览窗口。</li>
+<li>鼠标点蓝色感叹号</li>
+</ul>
+<h4 id="参数预览"><a href="#参数预览" class="headerlink" title="参数预览"></a>参数预览</h4><ul>
+<li>“Cmd + Shift + Space</li>
+</ul>
+<h4 id="自动补全设置"><a href="#自动补全设置" class="headerlink" title="自动补全设置"></a>自动补全设置</h4><ul>
+<li>先我们可以通过设置 “editor.quickSuggestions” 来决定在什么语境下自动补全窗口会被唤出</li>
+<li>参数预览窗口也是一样的，你可以通过参数 “editor.parameterHints.enabled”</li>
+<li>增大设置 “editor.quickSuggestionsDelay” 的值，这样在你输入完代码后，自动补全窗口就会多等一会儿，然后再跳出来。</li>
+<li>其他几个自动补全的设置，你可以在设置里搜一搜 “editor.suggest”，自己修改玩一玩。</li>
+</ul>
+<h4 id="快速修复"><a href="#快速修复" class="headerlink" title="快速修复"></a>快速修复</h4><p>按下 “Cmd+.” （Windows 上是 Ctrl + . ）来调出这个快速修复的建议列表</p>
+<h4 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h4><ul>
+<li>只需把光标放到函数或者变量名上，然后按下ctrl- F2，这样这个函数或者变量出现的地方就都会被修改</li>
+<li>另一个常用的重构的操作就是把一段长代码抽取出来转成一个单独的函数。在VS Code中，我们只需选中那段代码，点击黄色的灯泡图标，然后选择对应的重构操作即可。</li>
+</ul>
+<h4 id="单词自动补全"><a href="#单词自动补全" class="headerlink" title="单词自动补全"></a>单词自动补全</h4><ul>
+<li>editor.wordBasedSuggestions</li>
+</ul>
+<h2 id="代码片段（code-snippet）"><a href="#代码片段（code-snippet）" class="headerlink" title="代码片段（code snippet）"></a><strong>代码片段（code snippet）</strong></h2><blockquote>
+<p>代码片段是对常用代码的一个抽象，它保留了大部分不变的代码，然后把需要经常变动的部分，换成变量，这样等下次调用它的时候，只需要把这些变量换成我们需要的就可以了。</p>
+</blockquote>
+<ul>
+<li><p>搜索“配置用户代码片段”（Configure User Snippets）并且执行。这时候我们会看到一个列表，让我们选择语言。这里我们依然选择 JavaScript 作为我们的示例语言</p>
+</li>
+<li><p>我们可以选中第七行到第十四行，按下 “Cmd+ /”取消注释。</p>
+<ul>
+<li>你已经看到了，这个代码片段文件，是一个 JSON 文件，它的根对象下面的所有子节点都是一个单独的代码片段，并能够被我们调用和插入编辑器。这个代码片段对象的键（key）是这个代码片段的名字，我们在书写时只要保证这个名字跟当前文件里的其他代码片段不冲突就可以了。</li>
+</ul>
+</li>
+<li><h2 id="Tab-Stop"><a href="#Tab-Stop" class="headerlink" title="Tab Stop"></a>Tab Stop</h2><ul>
+<li>内容里 的<code>$1</code>和 <code>$2</code>不见了，取而代之的是两个竖线。这<code>$1</code>和 <code>$2</code>就是 Tab Stop，意思是，当我们按下 Tab 键之后，光标移动到的位置。当这段代码片段被插入到编辑器后，编辑器会把光标移动到<code>$1</code>所在的位置，然后如果你再按一次 Tab 键，光标则会立刻移动到 <code>$2</code>的位置。</li>
+</ul>
+</li>
+<li><p>占位符</p>
+<p>在我们插入 Tab Stop 的时候，除了 <code>$1</code>、 <code>$2</code> 这样的语法，我们还可以填入 <code>${1:label}</code>，在这个格式下，代码片段被插入编辑器里时，$1 的位置处，会预先填入 <code>label</code>这个值，并且 <code>label</code> 会被选中。</p>
+</li>
+<li><h2 id="多光标"><a href="#多光标" class="headerlink" title="多光标"></a>多光标</h2><ul>
+<li>${1:label} 来指定 Tab Stop 和占位符，但其实我们也可以在代码片段的多个位置使用同样的 Tab Stop 。</li>
+</ul>
+</li>
+<li><h2 id="预设变量"><a href="#预设变量" class="headerlink" title="预设变量"></a>预设变量</h2><p>上面我们提到了，在每个 Tab Stop 的位置，我们可以提供占位符，也就是提前预设好一些值。但这些占位符是我们提前写在代码片段里的，跟当前代码的上下文往往没什么关系。不过，VS Code 的代码片段支持里，还提供了一种模板，叫做<strong>预设变量</strong>。</p>
+<p>比如说，我们想在代码片段里的某个位置使用剪切板的内容，那么我们在那个位置写上 <code>$CLIPBOARD</code> 就好了，如果我们希望插入代码片段后自己可以修改这个值，也可以将它放在一个 Tab Stop 里面，语法则是 <code>${1:$CLIPBOARD}</code>。</p>
+<p>除了剪切板，VS Code 还支持其他数十个预设值，大家可以按需自行<a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets#_variables" target="_blank" rel="noopener">查看文档</a>，自己尝试。</p>
+</li>
+</ul>
+<h2 id="一定要用好代码折叠、小地图和面包屑特性"><a href="#一定要用好代码折叠、小地图和面包屑特性" class="headerlink" title="一定要用好代码折叠、小地图和面包屑特性"></a>一定要用好代码折叠、小地图和面包屑特性</h2><h3 id="代码折叠"><a href="#代码折叠" class="headerlink" title="代码折叠"></a>代码折叠</h3><ul>
+<li><p>当我们按下 “Cmd + Option + 左方括号”（Windows 上是 Ctrl + Shift + 左方括号），当前光标所处的最内层的、可以被折叠的代码就会被<strong>折叠</strong>起来。请注意，我们在这里加了两个限制条件，“最内层”和“可以被折叠”。</p>
+</li>
+<li><p>前光标位置开始，一直到最外层的，所有可以被折叠的部分递归地折叠起来,按下 “Cmd + K ”“Cmd + 左方括号”（Windows 上是 Ctrl + K、Ctrl + 左方括号）。而至于如何递归地展开，不用问你肯定也知道，是：依次按下“Cmd + K ”“Cmd + 右方括号”。</p>
+</li>
+<li><p>折叠当前页面所有代码,按下 “Cmd + K”“Cmd + 0”（Windows 上是 Ctrl + K，Ctrl + 0）即可</p>
+</li>
+<li><h3 id="基于语言定义的代码折叠"><a href="#基于语言定义的代码折叠" class="headerlink" title="基于语言定义的代码折叠,"></a>基于语言定义的代码折叠,</h3><ul>
+<li>// region Main</li>
+<li>// endregion</li>
+</ul>
+</li>
+</ul>
+<h3 id="小地图"><a href="#小地图" class="headerlink" title="小地图"></a>小地图</h3><p>editor.minimap</p>
+<h3 id="面包屑"><a href="#面包屑" class="headerlink" title="面包屑"></a>面包屑</h3><p>左到右，我们能够看到一层一层文件夹的名字，然后是当前文件名，最后则是光标所在的函数的名字。我们可以通过点击这个工具栏上的文字，然后进行文件夹、文件或者是函数的跳转。</p>
+<h2 id="极速搜索有时候比Intellisense还重要"><a href="#极速搜索有时候比Intellisense还重要" class="headerlink" title="极速搜索有时候比Intellisense还重要"></a>极速搜索有时候比Intellisense还重要</h2><h3 id="单文件搜索"><a href="#单文件搜索" class="headerlink" title="单文件搜索"></a>单文件搜索</h3><ul>
+<li>cmd+f<ul>
+<li>光标会到搜索框</li>
+</ul>
+</li>
+<li>cmd+g<ul>
+<li>光标不变</li>
+</ul>
+</li>
+<li>加shift反向跳转</li>
+<li>按下 “Cmd + Option + R”（Windows 上是 Alt + R），就能够打开正则表达式的支持</li>
+<li>捷键直接调出替换窗口。最常用的命令就是按下 “Cmd + Option + F”</li>
+<li>下“Shift + Tab” 键将光标移动到上面的搜索输入框里。“Tab”和“Shift + Tab”键能够帮助你在这两个输入框直接进行跳转。</li>
+</ul>
+<h3 id="多文件搜索和替换"><a href="#多文件搜索和替换" class="headerlink" title="多文件搜索和替换"></a>多文件搜索和替换</h3><p>“Cmd + Shift + F” （Windows 上是 Ctrl + Shift + F）来调出多文件搜索的视图</p>
+<p>按三个点,支持选择文件,glob语法</p>
+<p>通配符操作，<em>,?,[]这三个通配符，</em>代表0个或多个字符，?代表一个字符，[]匹配指定范围内的字符</p>
+<h3 id="多文件搜索配置"><a href="#多文件搜索配置" class="headerlink" title="多文件搜索配置"></a>多文件搜索配置</h3><ul>
+<li><strong>第一个是“search.collapseResults”</strong>。它是用来控制是否自动展开搜索结果</li>
+<li><strong>第二个是 “search.location” ，也就是多文件搜索视图的位置</strong>。</li>
+</ul>
+<h2 id="优化你的编辑器设置"><a href="#优化你的编辑器设置" class="headerlink" title="优化你的编辑器设置"></a>优化你的编辑器设置</h2><h1 id="VS-Code-的界面"><a href="#VS-Code-的界面" class="headerlink" title="VS Code 的界面"></a>VS Code 的界面</h1><h2 id="工作台"><a href="#工作台" class="headerlink" title="工作台"></a>工作台</h2><ul>
+<li>ctrl++shift+f 文件资源管理器，主要用于浏览和管理文件和文件夹。</li>
+<li>跨文件搜索，用于在当前文件夹内进行跨文件的搜索。</li>
+<li>win+shift+g源代码管理，用于对当前文件夹下的代码进行版本管理，默认 VS Code 支持的版本管理软件是 Git。</li>
+<li>启动和调试，用于对当前文件夹下的项目进行运行和调试。</li>
+<li>扩展管理，用于下载和管理 VS Code 里的插件。</li>
+</ul>
+<h3 id="命令面板"><a href="#命令面板" class="headerlink" title="命令面板"></a>命令面板</h3><p>首先是几个<strong>符号</strong>：</p>
+<ol>
+<li><code>&gt;</code>（大于号） ，用于显示所有的命令。</li>
+<li>@ ，用于显示和跳转文件中的“符号”（Symbols），在@符号后添加冒号：则可以把符号们按类别归类。</li>
+<li><code>#</code>号，用于显示和跳转工作区中的“符号”（Symbols）。</li>
+<li>：（冒号）， 用于跳转到当前文件中的某一行。</li>
+</ol>
+<p>这几个符号所对应的命令我们在之前的文章中已经研究过，比较好记。输入这些符号后，继续输入相应内容就可以对结果进行搜索了。</p>
+<p>剩下的都是<strong>英文单词或者缩写</strong>，知道它们的含义后就可以轻松掌握了：</p>
+<ol>
+<li>edt 是 edit（编辑）的缩写，输入 edt 和一个空格，命令面板就会显示所有已经打开的文件；而<code>edt active</code>则只会显示当前活动组中的文件。</li>
+<li>ext 是 extension（插件）的缩写，输入 ext 和一个空格，就可以进行插件的管理；<code>ext install</code> 则可以在命令面板中搜索和安装插件。</li>
+<li>task和debug 分别对应于任务和调试功能。这两个功能的使用我会在之后的章节中详细讲解。</li>
+<li>term 是 terminal（终端）的缩写，你可以用这个命令来创建和管理终端实例。</li>
+<li>view 则是用于打开 VS Code 的各个 UI 组件。</li>
+</ol>
+<h3 id="有趣的设置"><a href="#有趣的设置" class="headerlink" title="有趣的设置"></a>有趣的设置</h3><ul>
+<li>第一个设置是“workbench.commandPalette.history”。</li>
+<li>另一个设置是 “workbench.commandPalette.preserveInput”，它的默认值是 false。如果你把它的值改成 true 的话，那么你在命令面板里搜索了某个命令并执行了，当你下次打开命令面板的时候，之前输入的值还在命令面板的输入框里</li>
+</ul>
+<h3 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h3><h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><h4 id="多文件夹工作区（multi-root-workspace）"><a href="#多文件夹工作区（multi-root-workspace）" class="headerlink" title="多文件夹工作区（multi-root workspace）"></a>多文件夹工作区（multi-root workspace）</h4><ul>
+<li>命令面板，搜索 “将文件夹添加到工作区” （add folder to workspace）</li>
+<li>保存这个工作区，接下来你可以调出命令面板，搜索“将工作区另存为” （save workspace as），VS Code 就会为这个工作区创建一个文件，这个文件的后缀名是 “code-workspace”。</li>
+</ul>
+<h4 id="工作区切换"><a href="#工作区切换" class="headerlink" title="工作区切换"></a>工作区切换</h4><ul>
+<li><p>Ctrl + W，或者调出命令面板，搜索 “切换窗口（Switch Window）”，然后选择你要跳转的那个文件夹中</p>
+</li>
+<li><p>快速切换窗口（Quick Switch Window,要跳转到上一个打开的窗口</p>
+</li>
+<li><p>如果你同一时间只会关注一个项目，那你也大可不必使用多个窗口。我就经常只用一个显示器和一个窗口，然后当我想在另外一个项目上工作时，我就会按下 Ctrl + R（或者使用命令面板，搜索 “打开最近的文件”），此时我就能够看到最近操作过的文件夹并按下回车键进行切换了</p>
+</li>
+<li>当你按下 Ctrl + R 调出最近打开的文件夹的列表后，也能够按下 Cmd + 回车键，将它在一个新的窗口中打开</li>
+</ul>
+<h3 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h3><h4 id="差异编辑器"><a href="#差异编辑器" class="headerlink" title="差异编辑器"></a>差异编辑器</h4><ul>
+<li>前四个按钮<ul>
+<li>第一个按钮的功能是从差异编辑器跳转到一个普通的编辑器，并且打开这个文件。这样我们能够无干扰地进行编辑操作了</li>
+<li>第二个按钮控制的是：是否要在差异编辑器里显示代码里行末的空格符的变化。比如说你不小心在行末添加了几个空格，默认情况下，VS Code 觉得这几个空格不影响代码，就不会在差异编辑器里显示。但我建议把它打开，这样你就可以确保能够看到所有的代码改动。</li>
+<li>接下来的两个箭头按钮，就是用于在当前文件里的多个变动之间进行跳转了。</li>
+</ul>
+</li>
+</ul>
+<h4 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h4><p>最后是一个三个点的图标，想必不用点击开你也知道，它意味着里面有更多的功能，点击后即可看到一个下拉菜单。</p>
+<h4 id="代码内的差异编辑"><a href="#代码内的差异编辑" class="headerlink" title="代码内的差异编辑"></a>代码内的差异编辑</h4><h3 id="配置终端模拟器"><a href="#配置终端模拟器" class="headerlink" title="配置终端模拟器"></a>配置终端模拟器</h3><h4 id="创建终端"><a href="#创建终端" class="headerlink" title="创建终端"></a>创建终端</h4><ul>
+<li>Ctrl + ` 键，一个新的终端就被创建出来了</li>
+<li><p>在按Ctrl + ` 键将其隐藏。</p>
+</li>
+<li><p>Ctrl + Shift + `，或者在命令面板里搜索 “新建集成终端</p>
+</li>
+</ul>
+<h4 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h4><ul>
+<li>命令面板里运行 “聚焦于下一终端” （Focus Next Terminal）或者 “聚焦于上一终端” （Focus Previous Terminal）进行切换</li>
+<li>-只需按下 Cmd + \ 或者运行 “拆分终端”（Split Terminal），就能够将当前的终端一分为二；如果再次按下这个快捷键，就能够将当前的面板平均分为三份</li>
+<li>拆分终端之间切换的快捷方式,聚焦于下一个窗格” (Focus Next Pane)、“聚焦于上一个窗格” (Focus Previous Pane)</li>
+</ul>
+<h4 id="终端内操作"><a href="#终端内操作" class="headerlink" title="终端内操作"></a>终端内操作</h4><ul>
+<li><p>我们能够在终端里使用 Shell 自身支持的那些快捷键操作。比如在 Bash 里，我们可以按下 “Ctrl + A” 或者 “Home” 键把光标移动到一行的开头，也可以按下 “Option + 左方向键” （Windows 上是 Alt + 左方向键）把光标向前移动一个单词；如果我们在集成终端里使用的也是 Bash，那么这些操作依然生效。</p>
+</li>
+<li><p>VS Code 也为几个常用的操作提供了接近于编辑器命令的快捷键</p>
+</li>
+<li><p>按下“Cmd + F”调出搜索框</p>
+</li>
+</ul>
+<h4 id="功能整合"><a href="#功能整合" class="headerlink" title="功能整合"></a>功能整合</h4><ul>
+<li><p>集成终端中非常轻松地打开一个文件。按下 Cmd 键，然后把鼠标移动到这个文件名的上面，我们就能看到这个文件名下出现了一个下划线，这说明集成终端成功检测出了这个文件的位置，此时只需按下鼠标左键就能将这个文件在当前编辑器中打开</p>
+</li>
+<li><p>集成终端和资源管理器也有互动。比如我们打开了一个脚本文件，希望直接执行这个脚本文件，就可以打开命令面板，运行 “在活动终端中运行活动文件”（Run Active File In Active Terminal），这样这个脚本就会在当前打开的集成终端中运行了</p>
+</li>
+<li>我们也可以选中编辑器中的某段代码，然后打开命令面板，运行“在活动终端中运行所选文本”（Run Selected Text In Active Terminal），这段代码就会在终端中执行。</li>
+<li>对了，我们在使用命令行的时候，一个经常做的操作就是 cd 进入某个文件夹，或者 cd … 回退到上一层文件夹，甚至有的时候需要多次运行这个命令才能调整到我们期望的某个文件夹下然后再进行操作。有个资源管理器，这个场景就简单多了，我们只需在目标文件夹上按下右键调出上下文菜单，然后选择 “在终端中打开”。</li>
+<li>第二个则是关于终端的持久化,tmux</li>
+</ul>
+<h3 id="你的项目打造Workflow"><a href="#你的项目打造Workflow" class="headerlink" title="你的项目打造Workflow"></a>你的项目打造Workflow</h3><h4 id="执行任务"><a href="#执行任务" class="headerlink" title="执行任务"></a>执行任务</h4><h4 id="自定义任务"><a href="#自定义任务" class="headerlink" title="自定义任务"></a>自定义任务</h4><h3 id="debugger"><a href="#debugger" class="headerlink" title="debugger"></a>debugger</h3><h3 id="工作区快捷键"><a href="#工作区快捷键" class="headerlink" title="工作区快捷键"></a>工作区快捷键</h3><h4 id="编辑器操作"><a href="#编辑器操作" class="headerlink" title="编辑器操作"></a>编辑器操作</h4><ul>
+<li><p>创建出多个编辑器 Cmd + \”（Windows 上是 Ctrl + \），或者从命令面板里搜寻 “拆分编辑器” （Split Editor）并运行即可实现。 </p>
+</li>
+<li><p>你可以按下 “Cmd + 1”“Cmd + 2”和“Cmd + 3”（Windows 上是 Ctrl+1，Ctrl+2，Ctrl+3）分别在这三个编辑器跳转</p>
+</li>
+<li>纵向的布局。所以你可以使用命令 “切换垂直/水平编辑器布局” （Flip Editor Group Layout）或者按下“Cmd + Option + 0”（Windows 上是 Shift + Alt + 0）来进行布局方向的切换</li>
+</ul>
+<h4 id="tab"><a href="#tab" class="headerlink" title="tab"></a>tab</h4><p>在 Tab 之间进行跳转。你可以使用命令 “打开上/下一个编辑器”（Open Previous/Next Editor）或者按下 “Cmd + Option + 左/右方向键”（Windows 上是 Ctrl + Pagedown/Pageup）在编辑器 Tab 之间进行跳转。</p>
+<p>要注意的是，这个命令会依次打开每个编辑器组里的每个 Tab。但是如果你只希望在某个编辑器组里进行跳转的话，那么你就需要另一个命令 “打开组中的下一个编辑器”（Open Next Editor in Group）。</p>
+<ul>
+<li><p>移动编辑器 Tab</p>
+<p>除了将鼠标聚焦到其他编辑器组里，VS Code 还允许我们把当前的编辑器 Tab 移动到其他编辑器组当中去。比如我们可以使用命令 “将编辑器移动到下一组”（Move Editor into Next Group），将当前的 Tab 移动到下一个编辑器组中。</p>
+</li>
+<li><p>网格布局</p>
+</li>
+<li><p>VS Code 肯定会添加命令让我们能跳转到当前编辑器上方、下方、左侧和右侧的“编辑器”。比如在下图中，我就使用了 “聚焦到上方编辑器组”（Focus Above Editor Group）</p>
+</li>
+<li><p>Cmd + B （Windows 上是 Ctrl + B）打开或者关闭整个视图</p>
+</li>
+<li><p>也可以按下 Cmd + J （Windows 上是 Ctrl + J）来打开或者关闭面板</p>
+</li>
+<li><p>如果我们不希望看到最左侧的活动栏，或者最下面的状态栏，也可以通过命令 “切换活动栏可见性”（Toggle Activity Bar Visibility）和 “切换状态栏可见性”（Toggle Status Bar Visibility）来一键开关</p>
+</li>
+<li><p>通过运行 “切换禅模式”(Toggle Zen Mode)，就可以把侧边栏、面板等全部隐藏。进入禅模式后，只需按下 Escape 键，即可退出禅模式</p>
+</li>
+<li><p>大屏幕 切换居中布局”（Toggle Centered Layout），将编辑器放在 VS Code 工作区的正中间，同时你还可以通过拉动编辑器两边的边框，调整编辑器的宽度。如此一来，当你使用大屏幕时，就不用担心编辑器里的代码，都“缩”在屏幕的左上角了。</p>
+</li>
+</ul>
+<h3 id="python语言支持"><a href="#python语言支持" class="headerlink" title="python语言支持"></a>python语言支持</h3><p>Python 插件会自动读取本地的各种 Python packages，然后为你提供智能提醒。而这里特别值得一提的是，如果你有一些第三方的 Python 脚本，但是它们并没有被VS Code的 Python 插件所识别，而你又希望能够获得它们的智能提示，那你可以通过添加如下的配置来实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;python.autoComplete.extraPaths&quot;: [</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>Python 插件就会分析 python.autoComplete.extraPaths 下的所有文件夹，然后分析这些代码，并且提供 IntelliSense。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/vscode/" rel="tag"># vscode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Ctf_web/sql注入.html" rel="next" title="sql注入总结">
+                <i class="fa fa-chevron-left"></i> sql注入总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Ctf_web/upload.html" rel="prev" title="upload总结">
+                upload总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzgwMC8yMDMzOQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wendell</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tongweigii@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常见操作"><span class="nav-number">1.</span> <span class="nav-text">常见操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础理论"><span class="nav-number">2.</span> <span class="nav-text">基础理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#学习编辑器-在学什么"><span class="nav-number">2.1.</span> <span class="nav-text">学习编辑器,在学什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vs-code-why-how-what"><span class="nav-number">2.2.</span> <span class="nav-text">vs code why,how,what</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上手vs-code"><span class="nav-number">2.3.</span> <span class="nav-text">上手vs code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何双手不离开键盘"><span class="nav-number">2.4.</span> <span class="nav-text">如何双手不离开键盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#键盘操作：光标的移动、文本的选择、文本的删除，以及如何为编辑器命令绑定快捷键"><span class="nav-number">2.4.1.</span> <span class="nav-text">键盘操作：光标的移动、文本的选择、文本的删除，以及如何为编辑器命令绑定快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快捷键进阶"><span class="nav-number">2.4.2.</span> <span class="nav-text">快捷键进阶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多光标特性"><span class="nav-number">2.4.3.</span> <span class="nav-text">多光标特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-“Cmd-D”"><span class="nav-number">2.4.4.</span> <span class="nav-text">1. “Cmd + D”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Option-Shift-i"><span class="nav-number">2.4.5.</span> <span class="nav-text">2. Option + Shift + i</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#玩转鼠标操作"><span class="nav-number">2.4.6.</span> <span class="nav-text">玩转鼠标操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功能的核心"><span class="nav-number">3.</span> <span class="nav-text">功能的核心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码自动补全和重构"><span class="nav-number">3.1.</span> <span class="nav-text">代码自动补全和重构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">自动补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速预览"><span class="nav-number">3.1.0.2.</span> <span class="nav-text">快速预览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数预览"><span class="nav-number">3.1.0.3.</span> <span class="nav-text">参数预览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全设置"><span class="nav-number">3.1.0.4.</span> <span class="nav-text">自动补全设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速修复"><span class="nav-number">3.1.0.5.</span> <span class="nav-text">快速修复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重构"><span class="nav-number">3.1.0.6.</span> <span class="nav-text">重构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词自动补全"><span class="nav-number">3.1.0.7.</span> <span class="nav-text">单词自动补全</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码片段（code-snippet）"><span class="nav-number">3.2.</span> <span class="nav-text">代码片段（code snippet）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tab-Stop"><span class="nav-number">3.3.</span> <span class="nav-text">Tab Stop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多光标"><span class="nav-number">3.4.</span> <span class="nav-text">多光标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预设变量"><span class="nav-number">3.5.</span> <span class="nav-text">预设变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一定要用好代码折叠、小地图和面包屑特性"><span class="nav-number">3.6.</span> <span class="nav-text">一定要用好代码折叠、小地图和面包屑特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码折叠"><span class="nav-number">3.6.1.</span> <span class="nav-text">代码折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于语言定义的代码折叠"><span class="nav-number">3.6.2.</span> <span class="nav-text">基于语言定义的代码折叠,</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小地图"><span class="nav-number">3.6.3.</span> <span class="nav-text">小地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面包屑"><span class="nav-number">3.6.4.</span> <span class="nav-text">面包屑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#极速搜索有时候比Intellisense还重要"><span class="nav-number">3.7.</span> <span class="nav-text">极速搜索有时候比Intellisense还重要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单文件搜索"><span class="nav-number">3.7.1.</span> <span class="nav-text">单文件搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多文件搜索和替换"><span class="nav-number">3.7.2.</span> <span class="nav-text">多文件搜索和替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多文件搜索配置"><span class="nav-number">3.7.3.</span> <span class="nav-text">多文件搜索配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化你的编辑器设置"><span class="nav-number">3.8.</span> <span class="nav-text">优化你的编辑器设置</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#VS-Code-的界面"><span class="nav-number">4.</span> <span class="nav-text">VS Code 的界面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作台"><span class="nav-number">4.1.</span> <span class="nav-text">工作台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令面板"><span class="nav-number">4.1.1.</span> <span class="nav-text">命令面板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有趣的设置"><span class="nav-number">4.1.2.</span> <span class="nav-text">有趣的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源管理器"><span class="nav-number">4.1.3.</span> <span class="nav-text">资源管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置"><span class="nav-number">4.1.3.1.</span> <span class="nav-text">设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多文件夹工作区（multi-root-workspace）"><span class="nav-number">4.1.3.2.</span> <span class="nav-text">多文件夹工作区（multi-root workspace）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作区切换"><span class="nav-number">4.1.3.3.</span> <span class="nav-text">工作区切换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本管理"><span class="nav-number">4.1.4.</span> <span class="nav-text">版本管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#差异编辑器"><span class="nav-number">4.1.4.1.</span> <span class="nav-text">差异编辑器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下拉菜单"><span class="nav-number">4.1.4.2.</span> <span class="nav-text">下拉菜单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码内的差异编辑"><span class="nav-number">4.1.4.3.</span> <span class="nav-text">代码内的差异编辑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置终端模拟器"><span class="nav-number">4.1.5.</span> <span class="nav-text">配置终端模拟器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建终端"><span class="nav-number">4.1.5.1.</span> <span class="nav-text">创建终端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换"><span class="nav-number">4.1.5.2.</span> <span class="nav-text">切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端内操作"><span class="nav-number">4.1.5.3.</span> <span class="nav-text">终端内操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#功能整合"><span class="nav-number">4.1.5.4.</span> <span class="nav-text">功能整合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你的项目打造Workflow"><span class="nav-number">4.1.6.</span> <span class="nav-text">你的项目打造Workflow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#执行任务"><span class="nav-number">4.1.6.1.</span> <span class="nav-text">执行任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义任务"><span class="nav-number">4.1.6.2.</span> <span class="nav-text">自定义任务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debugger"><span class="nav-number">4.1.7.</span> <span class="nav-text">debugger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作区快捷键"><span class="nav-number">4.1.8.</span> <span class="nav-text">工作区快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑器操作"><span class="nav-number">4.1.8.1.</span> <span class="nav-text">编辑器操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tab"><span class="nav-number">4.1.8.2.</span> <span class="nav-text">tab</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python语言支持"><span class="nav-number">4.1.9.</span> <span class="nav-text">python语言支持</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wendell</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">49.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<br>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("03/15/2019 10:22:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?05d599349e61768582010a6d33f2c57b":"https://jspassport.ssl.qhimg.com/11.0.1.js?05d599349e61768582010a6d33f2c57b";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

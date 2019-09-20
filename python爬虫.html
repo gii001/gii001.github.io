@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,学习笔记,爬虫,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Wendell's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="传智的pytohn爬虫笔记">
+<meta name="keywords" content="python,学习笔记,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫">
+<meta property="og:url" content="http://blog.wendelltong.xyz/python爬虫.html">
+<meta property="og:site_name" content="Wendell&#39;s blog">
+<meta property="og:description" content="传智的pytohn爬虫笔记">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="file:///I:/blog/HexoEditor/views/images/support.ui.select.png">
+<meta property="og:image" content="file:///I:/blog/HexoEditor/views/images/json2.png">
+<meta property="og:image" content="file:///I:/blog/HexoEditor/views/images/json.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/images/atricleImages/20190331153643102/20190331034816503.png">
+<meta property="og:updated_time" content="2019-04-19T03:38:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python爬虫">
+<meta name="twitter:description" content="传智的pytohn爬虫笔记">
+<meta name="twitter:image" content="file:///I:/blog/HexoEditor/views/images/support.ui.select.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.wendelltong.xyz/python爬虫.html">
+
+
+
+
+
+  <title>python爬虫 | Wendell's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wendell's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.wendelltong.xyz/python爬虫.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wendell">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wendell's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">python爬虫</h2>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-24T21:38:38+08:00">
+                2018-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  20
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>传智的pytohn爬虫笔记<br><a id="more"></a></p>
+<h1 id="信息获取"><a href="#信息获取" class="headerlink" title="信息获取"></a>信息获取</h1><h2 id="静态html"><a href="#静态html" class="headerlink" title="静态html"></a>静态html</h2><p>requests 库</p>
+<h2 id="动态html"><a href="#动态html" class="headerlink" title="动态html"></a>动态html</h2><h3 id="直接从-JavaScript-代码里采集内容"><a href="#直接从-JavaScript-代码里采集内容" class="headerlink" title="直接从 JavaScript 代码里采集内容"></a>直接从 JavaScript 代码里采集内容</h3><h3 id="Selenium-PhantomJS"><a href="#Selenium-PhantomJS" class="headerlink" title="Selenium+PhantomJS"></a>Selenium+PhantomJS</h3><h4 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h4><p>Selenium 库里有个叫 WebDriver 的 API。WebDriver 有点儿像可以加载网站的浏览器，但是它也可以像 BeautifulSoup 或者其他 Selector 对象一样用来查找页面元素，与页面上的元素进行交互 (发送文本、点击等)，以及执行其他动作来运行网络爬虫。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"># IPython2 测试代码</span><br><span class="line"></span><br><span class="line"># 导入 webdriver</span><br><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line"># 要想调用键盘按键操作需要引入keys包</span><br><span class="line">from selenium.webdriver.common.keys import Keys</span><br><span class="line"></span><br><span class="line"># 调用环境变量指定的PhantomJS浏览器创建浏览器对象</span><br><span class="line">driver = webdriver.PhantomJS()</span><br><span class="line"></span><br><span class="line"># 如果没有在环境变量指定PhantomJS位置</span><br><span class="line"># driver = webdriver.PhantomJS(executable_path=&quot;./phantomjs&quot;))</span><br><span class="line"></span><br><span class="line"># get方法会一直等到页面被完全加载，然后才会继续程序，通常测试会在这里选择 time.sleep(2)</span><br><span class="line">driver.get(&quot;http://www.baidu.com/&quot;)</span><br><span class="line"></span><br><span class="line"># 获取页面名为 wrapper的id标签的文本内容</span><br><span class="line">data = driver.find_element_by_id(&quot;wrapper&quot;).text</span><br><span class="line"></span><br><span class="line"># 打印数据内容</span><br><span class="line">print data</span><br><span class="line"></span><br><span class="line"># 打印页面标题 &quot;百度一下，你就知道&quot;</span><br><span class="line">print driver.title</span><br><span class="line"></span><br><span class="line"># 生成当前页面快照并保存</span><br><span class="line">driver.save_screenshot(&quot;baidu.png&quot;)</span><br><span class="line"></span><br><span class="line"># id=&quot;kw&quot;是百度搜索输入框，输入字符串&quot;长城&quot;</span><br><span class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(u&quot;长城&quot;)</span><br><span class="line"></span><br><span class="line"># id=&quot;su&quot;是百度搜索按钮，click() 是模拟点击</span><br><span class="line">driver.find_element_by_id(&quot;su&quot;).click()</span><br><span class="line"></span><br><span class="line"># 获取新的页面快照</span><br><span class="line">driver.save_screenshot(&quot;长城.png&quot;)</span><br><span class="line"></span><br><span class="line"># 打印网页渲染后的源代码</span><br><span class="line">print driver.page_source</span><br><span class="line"></span><br><span class="line"># 获取当前页面Cookie</span><br><span class="line">print driver.get_cookies()</span><br><span class="line"></span><br><span class="line"># ctrl+a 全选输入框内容</span><br><span class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL,&apos;a&apos;)</span><br><span class="line"></span><br><span class="line"># ctrl+x 剪切输入框内容</span><br><span class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL,&apos;x&apos;)</span><br><span class="line"></span><br><span class="line"># 输入框重新输入内容</span><br><span class="line">driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;itcast&quot;)</span><br><span class="line"></span><br><span class="line"># 模拟Enter回车键</span><br><span class="line">driver.find_element_by_id(&quot;su&quot;).send_keys(Keys.RETURN)</span><br><span class="line"></span><br><span class="line"># 清除输入框内容</span><br><span class="line">driver.find_element_by_id(&quot;kw&quot;).clear()</span><br><span class="line"></span><br><span class="line"># 生成新的页面快照</span><br><span class="line">driver.save_screenshot(&quot;itcast.png&quot;)</span><br><span class="line"></span><br><span class="line"># 获取当前url</span><br><span class="line">print driver.current_url</span><br><span class="line"></span><br><span class="line"># 关闭当前页面，如果只有一个页面，会关闭浏览器</span><br><span class="line"># driver.close()</span><br><span class="line"></span><br><span class="line"># 关闭浏览器</span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h4 id="页面操作"><a href="#页面操作" class="headerlink" title="页面操作"></a>页面操作</h4><p>Selenium 的 WebDriver提供了各种方法来寻找元素，假设下面有一个表单输入框：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>那么：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 获取id标签值</span><br><span class="line">element = driver.find_element_by_id(&quot;passwd-id&quot;)</span><br><span class="line"># 获取name标签值</span><br><span class="line">element = driver.find_element_by_name(&quot;user-name&quot;)</span><br><span class="line"># 获取标签名值</span><br><span class="line">element = driver.find_elements_by_tag_name(&quot;input&quot;)</span><br><span class="line"># 也可以通过XPath来匹配</span><br><span class="line">element = driver.find_element_by_xpath(&quot;//input[@id=&apos;passwd-id&apos;]&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="定位UI元素-WebElements"><a href="#定位UI元素-WebElements" class="headerlink" title="定位UI元素 (WebElements)"></a>定位UI元素 (WebElements)</h4><h5 id="关于元素的选取，有如下的API-单个元素选取"><a href="#关于元素的选取，有如下的API-单个元素选取" class="headerlink" title="关于元素的选取，有如下的API 单个元素选取"></a>关于元素的选取，有如下的API 单个元素选取</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">find_element_by_id</span><br><span class="line">find_elements_by_name</span><br><span class="line">find_elements_by_xpath</span><br><span class="line">find_elements_by_link_text</span><br><span class="line">find_elements_by_partial_link_text</span><br><span class="line">find_elements_by_tag_name</span><br><span class="line">find_elements_by_class_name</span><br><span class="line">find_elements_by_css_selector</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>By ID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_id(&quot;coolestWidgetEvah&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">element = driver.find_element(by=By.ID, value=&quot;coolestWidgetEvah&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>By Class Name</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CheddarGouda</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cheeses = driver.find_elements_by_class_name(&quot;cheese&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">cheeses = driver.find_elements(By.CLASS_NAME, &quot;cheese&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>By Tag Name</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">frame = driver.find_element_by_tag_name(&quot;iframe&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">frame = driver.find_element(By.TAG_NAME, &quot;iframe&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>By Name</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cheese = driver.find_element_by_name(&quot;cheese&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">cheese = driver.find_element(By.NAME, &quot;cheese&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>By Link Text</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cheese</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cheese = driver.find_element_by_link_text(&quot;cheese&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">cheese = driver.find_element(By.LINK_TEXT, &quot;cheese&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>By Partial Link Text</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search for cheese&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cheese = driver.find_element_by_partial_link_text(&quot;cheese&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">cheese = driver.find_element(By.PARTIAL_LINK_TEXT, &quot;cheese&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>By CSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">milkcheese</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cheese = driver.find_element_by_css_selector(&quot;#food span.dairy.aged&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">cheese = driver.find_element(By.CSS_SELECTOR, &quot;#food span.dairy.aged&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>By XPath</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inputs = driver.find_elements_by_xpath(&quot;//input&quot;)</span><br><span class="line">------------------------ or -------------------------</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">inputs = driver.find_elements(By.XPATH, &quot;//input&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="鼠标动作链"><a href="#鼠标动作链" class="headerlink" title="鼠标动作链"></a>鼠标动作链</h4><p>有些时候，我们需要再页面上模拟一些鼠标操作，比如双击、右击、拖拽甚至按住不动等，我们可以通过导入 ActionChains 类来做到：</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#导入 ActionChains 类</span><br><span class="line">from selenium.webdriver import ActionChains</span><br><span class="line"></span><br><span class="line"># 鼠标移动到 ac 位置</span><br><span class="line">ac = driver.find_element_by_xpath(&apos;element&apos;)</span><br><span class="line">ActionChains(driver).move_to_element(ac).perform()</span><br><span class="line"></span><br><span class="line"># 在 ac 位置单击</span><br><span class="line">ac = driver.find_element_by_xpath(&quot;elementA&quot;)</span><br><span class="line">ActionChains(driver).move_to_element(ac).click(ac).perform()</span><br><span class="line"></span><br><span class="line"># 在 ac 位置双击</span><br><span class="line">ac = driver.find_element_by_xpath(&quot;elementB&quot;)</span><br><span class="line">ActionChains(driver).move_to_element(ac).double_click(ac).perform()</span><br><span class="line"></span><br><span class="line"># 在 ac 位置右击</span><br><span class="line">ac = driver.find_element_by_xpath(&quot;elementC&quot;)</span><br><span class="line">ActionChains(driver).move_to_element(ac).context_click(ac).perform()</span><br><span class="line"></span><br><span class="line"># 在 ac 位置左键单击hold住</span><br><span class="line">ac = driver.find_element_by_xpath(&apos;elementF&apos;)</span><br><span class="line">ActionChains(driver).move_to_element(ac).click_and_hold(ac).perform()</span><br><span class="line"></span><br><span class="line"># 将 ac1 拖拽到 ac2 位置</span><br><span class="line">ac1 = driver.find_element_by_xpath(&apos;elementD&apos;)</span><br><span class="line">ac2 = driver.find_element_by_xpath(&apos;elementE&apos;)</span><br><span class="line">ActionChains(driver).drag_and_drop(ac1, ac2).perform()</span><br></pre></td></tr></table></figure>
+<h4 id="填充表单"><a href="#填充表单" class="headerlink" title="填充表单"></a>填充表单</h4><p>我们已经知道了怎样向文本框中输入文字，但是有时候我们会碰到<code></code>标签的下拉框。直接点击下拉框中的选项不一定可行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">未审核</span><br><span class="line">初审通过</span><br><span class="line">复审通过</span><br><span class="line">审核不通过</span><br></pre></td></tr></table></figure>
+<p><img src="file:///I:/blog/HexoEditor/views/images/support.ui.select.png" alt></p>
+<p>Selenium专门提供了Select类来处理下拉框。 其实 WebDriver 中提供了一个叫 Select 的方法，可以帮助我们完成这些事情：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 导入 Select 类</span><br><span class="line">from selenium.webdriver.support.ui import Select</span><br><span class="line"></span><br><span class="line"># 找到 name 的选项卡</span><br><span class="line">select = Select(driver.find_element_by_name(&apos;status&apos;))</span><br><span class="line"></span><br><span class="line"># </span><br><span class="line">select.select_by_index(1)</span><br><span class="line">select.select_by_value(&quot;0&quot;)</span><br><span class="line">select.select_by_visible_text(u&quot;未审核&quot;)</span><br></pre></td></tr></table></figure>
+<p>以上是三种选择下拉框的方式，它可以根据索引来选择，可以根据值来选择，可以根据文字来选择。注意：</p>
+<h4 id="index-索引从-0-开始"><a href="#index-索引从-0-开始" class="headerlink" title="index 索引从 0 开始"></a>index 索引从 0 开始</h4><h4 id="value是option标签的一个属性值，并不是显示在下拉框中的值"><a href="#value是option标签的一个属性值，并不是显示在下拉框中的值" class="headerlink" title="value是option标签的一个属性值，并不是显示在下拉框中的值"></a>value是option标签的一个属性值，并不是显示在下拉框中的值</h4><h4 id="visible-text是在option标签文本的值，是显示在下拉框的值"><a href="#visible-text是在option标签文本的值，是显示在下拉框的值" class="headerlink" title="visible_text是在option标签文本的值，是显示在下拉框的值"></a>visible_text是在option标签文本的值，是显示在下拉框的值</h4><p>全部取消选择怎么办呢？很简单:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select.deselect_all()</span><br></pre></td></tr></table></figure>
+<h4 id="弹窗处理"><a href="#弹窗处理" class="headerlink" title="弹窗处理"></a>弹窗处理</h4><p>当你触发了某个事件之后，页面出现了弹窗提示，处理这个提示或者获取提示信息方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert = driver.switch_to_alert()</span><br></pre></td></tr></table></figure>
+<h4 id="页面切换"><a href="#页面切换" class="headerlink" title="页面切换"></a>页面切换</h4><p>一个浏览器肯定会有很多窗口，所以我们肯定要有方法来实现窗口的切换。切换窗口的方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.switch_to.window(&quot;this is window name&quot;)</span><br></pre></td></tr></table></figure>
+<p>也可以使用 window_handles 方法来获取每个窗口的操作对象。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for handle in driver.window_handles:</span><br><span class="line">    driver.switch_to_window(handle)</span><br></pre></td></tr></table></figure>
+<h4 id="页面前进和后退"><a href="#页面前进和后退" class="headerlink" title="页面前进和后退"></a>页面前进和后退</h4><p>操作页面的前进和后退功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.forward()     #前进</span><br><span class="line">driver.back()        # 后退</span><br></pre></td></tr></table></figure>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><p>获取页面每个Cookies值，用法如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for cookie in driver.get_cookies():</span><br><span class="line">    print &quot;%s -&gt; %s&quot; % (cookie[&apos;name&apos;], cookie[&apos;value&apos;])</span><br></pre></td></tr></table></figure>
+<p>删除Cookies，用法如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># By name</span><br><span class="line">driver.delete_cookie(&quot;CookieName&quot;)</span><br><span class="line"></span><br><span class="line"># all</span><br><span class="line">driver.delete_all_cookies()</span><br></pre></td></tr></table></figure>
+<h4 id="页面等待"><a href="#页面等待" class="headerlink" title="页面等待"></a>页面等待</h4><p>注意：这是非常重要的一部分！！</p>
+<p>现在的网页越来越多采用了 Ajax 技术，这样程序便不能确定何时某个元素完全加载出来了。如果实际页面等待时间过长导致某个dom元素还没出来，但是你的代码直接使用了这个WebElement，那么就会抛出NullPointer的异常。</p>
+<p>为了避免这种元素定位困难而且会提高产生 ElementNotVisibleException 的概率。所以 Selenium 提供了两种等待方式，一种是隐式等待，一种是显式等待。</p>
+<p>隐式等待是等待特定的时间，显式等待是指定某一条件直到这个条件成立时继续执行。</p>
+<h5 id="显式等待"><a href="#显式等待" class="headerlink" title="显式等待"></a>显式等待</h5><p>显式等待指定某个条件，然后设置最长等待时间。如果在这个时间还没有找到元素，那么便会抛出异常了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line"># WebDriverWait 库，负责循环等待</span><br><span class="line">from selenium.webdriver.support.ui import WebDriverWait</span><br><span class="line"># expected_conditions 类，负责条件出发</span><br><span class="line">from selenium.webdriver.support import expected_conditions as EC</span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(&quot;http://www.xxxxx.com/loading&quot;)</span><br><span class="line">try:</span><br><span class="line">    # 页面一直循环，直到 id=&quot;myDynamicElement&quot; 出现</span><br><span class="line">    element = WebDriverWait(driver, 10).until(</span><br><span class="line">        EC.presence_of_element_located((By.ID, &quot;myDynamicElement&quot;))</span><br><span class="line">    )</span><br><span class="line">finally:</span><br><span class="line">    driver.quit()</span><br></pre></td></tr></table></figure>
+<p>如果不写参数，程序默认会 0.5s 调用一次来查看元素是否已经生成，如果本来元素就是存在的，那么会立即返回。</p>
+<p>下面是一些内置的等待条件，你可以直接调用这些条件，而不用自己写某些等待条件了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">title_is</span><br><span class="line">title_contains</span><br><span class="line">presence_of_element_located</span><br><span class="line">visibility_of_element_located</span><br><span class="line">visibility_of</span><br><span class="line">presence_of_all_elements_located</span><br><span class="line">text_to_be_present_in_element</span><br><span class="line">text_to_be_present_in_element_value</span><br><span class="line">frame_to_be_available_and_switch_to_it</span><br><span class="line">invisibility_of_element_located</span><br><span class="line">element_to_be_clickable – it is Displayed and Enabled.</span><br><span class="line">staleness_of</span><br><span class="line">element_to_be_selected</span><br><span class="line">element_located_to_be_selected</span><br><span class="line">element_selection_state_to_be</span><br><span class="line">element_located_selection_state_to_be</span><br><span class="line">alert_is_present</span><br></pre></td></tr></table></figure>
+<h5 id="隐式等待"><a href="#隐式等待" class="headerlink" title="隐式等待"></a>隐式等待</h5><p>隐式等待比较简单，就是简单地设置一个等待时间，单位为秒。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.implicitly_wait(10) # seconds</span><br><span class="line">driver.get(&quot;http://www.xxxxx.com/loading&quot;)</span><br><span class="line">myDynamicElement = driver.find_element_by_id(&quot;myDynamicElement&quot;)</span><br></pre></td></tr></table></figure>
+<p>当然如果不设置，默认等待时间为0。</p>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>等待填坑</p>
+<h1 id="信息提取"><a href="#信息提取" class="headerlink" title="信息提取"></a>信息提取</h1><h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><p> 如果是requests库，使用.json方法</p>
+<h2 id="import-json"><a href="#import-json" class="headerlink" title="import json"></a>import json</h2><p>json模块提供了四个功能：<code>dumps</code>、<code>dump</code>、<code>loads</code>、<code>load</code>，用于字符串 和 python数据类型间进行转换。</p>
+<h3 id="1-json-loads"><a href="#1-json-loads" class="headerlink" title="1. json.loads()"></a>1. json.loads()</h3><p>把Json格式字符串解码转换成Python对象 从json到python的类型转化对照如下：</p>
+<p><img src="file:///I:/blog/HexoEditor/views/images/json2.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># json_loads.py</span><br><span class="line"></span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">strList = &apos;[1, 2, 3, 4]&apos;</span><br><span class="line"></span><br><span class="line">strDict = &apos;&#123;&quot;city&quot;: &quot;北京&quot;, &quot;name&quot;: &quot;大猫&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">json.loads(strList) </span><br><span class="line"># [1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line">json.loads(strDict) # json数据自动按Unicode存储</span><br><span class="line"># &#123;u&apos;city&apos;: u&apos;\u5317\u4eac&apos;, u&apos;name&apos;: u&apos;\u5927\u732b&apos;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-json-dumps"><a href="#2-json-dumps" class="headerlink" title="2. json.dumps()"></a>2. json.dumps()</h3><p>实现python类型转化为json字符串，返回一个str对象 把一个Python对象编码转换成Json字符串</p>
+<p>从python原始类型向json类型的转化对照如下：</p>
+<p><img src="file:///I:/blog/HexoEditor/views/images/json.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># json_dumps.py</span><br><span class="line"></span><br><span class="line">import json</span><br><span class="line">import chardet</span><br><span class="line"></span><br><span class="line">listStr = [1, 2, 3, 4]</span><br><span class="line">tupleStr = (1, 2, 3, 4)</span><br><span class="line">dictStr = &#123;&quot;city&quot;: &quot;北京&quot;, &quot;name&quot;: &quot;大猫&quot;&#125;</span><br><span class="line"></span><br><span class="line">json.dumps(listStr)</span><br><span class="line"># &apos;[1, 2, 3, 4]&apos;</span><br><span class="line">json.dumps(tupleStr)</span><br><span class="line"># &apos;[1, 2, 3, 4]&apos;</span><br><span class="line"></span><br><span class="line"># 注意：json.dumps() 序列化时默认使用的ascii编码</span><br><span class="line"># 添加参数 ensure_ascii=False 禁用ascii编码，按utf-8编码</span><br><span class="line"># chardet.detect()返回字典, 其中confidence是检测精确度</span><br><span class="line"></span><br><span class="line">json.dumps(dictStr) </span><br><span class="line"># &apos;&#123;&quot;city&quot;: &quot;\\u5317\\u4eac&quot;, &quot;name&quot;: &quot;\\u5927\\u5218&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">chardet.detect(json.dumps(dictStr))</span><br><span class="line"># &#123;&apos;confidence&apos;: 1.0, &apos;encoding&apos;: &apos;ascii&apos;&#125;</span><br><span class="line"></span><br><span class="line">print json.dumps(dictStr, ensure_ascii=False) </span><br><span class="line"># &#123;&quot;city&quot;: &quot;北京&quot;, &quot;name&quot;: &quot;大刘&quot;&#125;</span><br><span class="line"></span><br><span class="line">chardet.detect(json.dumps(dictStr, ensure_ascii=False))</span><br><span class="line"># &#123;&apos;confidence&apos;: 0.99, &apos;encoding&apos;: &apos;utf-8&apos;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><em>chardet是一个非常优秀的编码识别模块，可通过pip安装</em></strong></p>
+<h3 id="3-json-dump"><a href="#3-json-dump" class="headerlink" title="3. json.dump()"></a>3. json.dump()</h3><p>将Python内置类型序列化为json对象后写入文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># json_dump.py</span><br><span class="line"></span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">listStr = [&#123;&quot;city&quot;: &quot;北京&quot;&#125;, &#123;&quot;name&quot;: &quot;大刘&quot;&#125;]</span><br><span class="line">json.dump(listStr, open(&quot;listStr.json&quot;,&quot;w&quot;), ensure_ascii=False)</span><br><span class="line"></span><br><span class="line">dictStr = &#123;&quot;city&quot;: &quot;北京&quot;, &quot;name&quot;: &quot;大刘&quot;&#125;</span><br><span class="line">json.dump(dictStr, open(&quot;dictStr.json&quot;,&quot;w&quot;), ensure_ascii=False)</span><br></pre></td></tr></table></figure>
+<h3 id="4-json-load"><a href="#4-json-load" class="headerlink" title="4. json.load()"></a>4. json.load()</h3><p>读取文件中json形式的字符串元素 转化成python类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># json_load.py</span><br><span class="line"></span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">strList = json.load(open(&quot;listStr.json&quot;))</span><br><span class="line">print strList</span><br><span class="line"></span><br><span class="line"># [&#123;u&apos;city&apos;: u&apos;\u5317\u4eac&apos;&#125;, &#123;u&apos;name&apos;: u&apos;\u5927\u5218&apos;&#125;]</span><br><span class="line"></span><br><span class="line">strDict = json.load(open(&quot;dictStr.json&quot;))</span><br><span class="line">print strDict</span><br><span class="line"># &#123;u&apos;city&apos;: u&apos;\u5317\u4eac&apos;, u&apos;name&apos;: u&apos;\u5927\u5218&apos;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JsonPath"><a href="#JsonPath" class="headerlink" title="JsonPath"></a>JsonPath</h2><p>JsonPath 是一种信息抽取类库，是从JSON文档中抽取指定信息的工具，提供多种语言实现版本，包括：Javascript, Python， PHP 和 Java。</p>
+<p>JsonPath 对于 JSON 来说，相当于 XPATH 对于 XML。</p>
+<blockquote>
+<p>下载地址：<a href="https://pypi.python.org/pypi/jsonpath/" target="_blank" rel="noopener">https://pypi.python.org/pypi/jsonpath</a></p>
+<p>安装方法：点击<code>Download URL</code>链接下载jsonpath，解压之后执行<code>python setup.py install</code></p>
+<p>官方文档：<a href="http://goessner.net/articles/JsonPath/" target="_blank" rel="noopener">http://goessner.net/articles/JsonPath</a></p>
+</blockquote>
+<h2 id="JsonPath与XPath语法对比："><a href="#JsonPath与XPath语法对比：" class="headerlink" title="JsonPath与XPath语法对比："></a>JsonPath与XPath语法对比：</h2><p>Json结构清晰，可读性高，复杂度低，非常容易匹配，下表中对应了XPath的用法。</p>
+<table>
+<thead>
+<tr>
+<th>XPath</th>
+<th>JSONPath</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td><code>$</code></td>
+<td>根节点</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td><code>@</code></td>
+<td>现行节点</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td><code>.</code>or<code>[]</code></td>
+<td>取子节点</td>
+</tr>
+<tr>
+<td><code>..</code></td>
+<td>n/a</td>
+<td>取父节点，Jsonpath未支持</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td><code>..</code></td>
+<td>就是不管位置，选择所有符合条件的条件</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>*</code></td>
+<td>匹配所有元素节点</td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>n/a</td>
+<td>根据属性访问，Json不支持，因为Json是个Key-value递归结构，不需要。</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td><code>[]</code></td>
+<td>迭代器标示（可以在里边做简单的迭代操作，如数组下标，根据内容选值等）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>[,]</code></td>
+<td>支持迭代器中做多选。</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td><code>?()</code></td>
+<td>支持过滤操作.</td>
+</tr>
+<tr>
+<td>n/a</td>
+<td><code>()</code></td>
+<td>支持表达式计算</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>n/a</td>
+<td>分组，JsonPath不支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p><img src="/images/atricleImages/20190331153643102/20190331034816503.png" alt></p>
+<ul>
+<li>字符集<ul>
+<li>字符集由字符组成<ul>
+<li>字符包含普通字符， .  匹配任意字符，\ 对字符进行转意</li>
+<li>[..] 为一个字符集，里面对里面字符匹配为或对关系</li>
+<li>\d 匹配数字,\D，\s空白字符,\S,\w单词和数字,\W,为预定义字符集，大写为取非 对意思</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>边界匹配</li>
+<li>逻辑分组<ul>
+<li>（）从1开始计数，可以（P=<name>\d）,利用别名访问，在后面访问的方法 \1 或者 (P=name)</name></li>
+</ul>
+</li>
+<li><p>数量词</p>
+<ul>
+<li>在字符之后，*0或无数，+1或无数，？0或1，｛｝类似python数字的取法，匹配多少次</li>
+</ul>
+</li>
+</ul>
+<h3 id="python-的使用"><a href="#python-的使用" class="headerlink" title="python 的使用"></a>python 的使用</h3><ul>
+<li>re模块</li>
+</ul>
+<p>ompile 函数</p>
+<p>compile 函数用于编译正则表达式，生成一个 Pattern 对象，它的一般使用形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line"># 将正则表达式编译成 Pattern 对象</span><br><span class="line">pattern = re.compile(r&apos;\d+&apos;)</span><br></pre></td></tr></table></figure>
+<p>在上面，我们已将一个正则表达式编译成 Pattern 对象，接下来，我们就可以利用 pattern 的一系列方法对文本进行匹配查找了。</p>
+<p>Pattern 对象的一些常用方法主要有：</p>
+<h4 id="match-方法：从起始位置开始查找，一次匹配"><a href="#match-方法：从起始位置开始查找，一次匹配" class="headerlink" title="match 方法：从起始位置开始查找，一次匹配"></a>match 方法：从起始位置开始查找，一次匹配</h4><p>match(string[, pos[, endpos]])</p>
+<p>没用匹配上返回NULL</p>
+<p>当匹配成功时返回一个 Match 对象，其中：</p>
+<ul>
+<li><p>group([group1, …]) 方法用于获得一个或多个分组匹配的字符串，当要获得整个匹配的子串时，可直接使用 group() 或 group(0)；</p>
+</li>
+<li><p>start([group]) 方法用于获取分组匹配的子串在整个字符串中的起始位置（子串第一个字符的索引），参数默认值为 0；</p>
+</li>
+<li><p>end([group]) 方法用于获取分组匹配的子串在整个字符串中的结束位置（子串最后一个字符的索引+1），参数默认值为 0；</p>
+</li>
+<li>span([group]) 方法返回 (start(group), end(group))。,返回匹配字串符的其实和结束位置<h4 id="search-方法：从任何位置开始查找，一次匹配"><a href="#search-方法：从任何位置开始查找，一次匹配" class="headerlink" title="search 方法：从任何位置开始查找，一次匹配"></a>search 方法：从任何位置开始查找，一次匹配</h4>基本同match方法，match 只从开头匹配，search从字串符任意位置匹配，都只匹配一次，找到就返回</li>
+</ul>
+<h4 id="findall-方法：全部匹配，返回列表"><a href="#findall-方法：全部匹配，返回列表" class="headerlink" title="findall 方法：全部匹配，返回列表"></a>findall 方法：全部匹配，返回列表</h4><p>同上，匹配多次，返回一个列表<br>如果没匹配到，返回空列表</p>
+<h4 id="finditer-方法：全部匹配，返回迭代器"><a href="#finditer-方法：全部匹配，返回迭代器" class="headerlink" title="finditer 方法：全部匹配，返回迭代器"></a>finditer 方法：全部匹配，返回迭代器</h4><p>同finditer，返回迭代器</p>
+<h4 id="split-方法：分割字符串，返回列表"><a href="#split-方法：分割字符串，返回列表" class="headerlink" title="split 方法：分割字符串，返回列表"></a>split 方法：分割字符串，返回列表</h4><pre><code>split(string[, maxsplit])
+</code></pre><p>其中，maxsplit 用于指定最大分割次数，不指定将全部分割。<br>看看例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">p = re.compile(r&apos;[\s\,\;]+&apos;)</span><br><span class="line">print p.split(&apos;a,b;; c   d&apos;)</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]</span><br></pre></td></tr></table></figure>
+<h4 id="sub-方法：替换"><a href="#sub-方法：替换" class="headerlink" title="sub 方法：替换"></a>sub 方法：替换</h4><p>看看例子：</p>
+<p>可以在sub（r“”）<br>传入字串符，表达式或者函数，利用分组完成想要的替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">p = re.compile(r&apos;(\w+) (\w+)&apos;) # \w = [A-Za-z0-9]</span><br><span class="line">s = &apos;hello 123, hello 456&apos;</span><br><span class="line"></span><br><span class="line">print p.sub(r&apos;hello world&apos;, s)  # 使用 &apos;hello world&apos; 替换 &apos;hello 123&apos; 和 &apos;hello 456&apos;</span><br><span class="line">print p.sub(r&apos;\2 \1&apos;, s)        # 引用分组</span><br><span class="line"></span><br><span class="line">def func(m):</span><br><span class="line">    return &apos;hi&apos; + &apos; &apos; + m.group(2)</span><br><span class="line"></span><br><span class="line">print p.sub(func, s)</span><br><span class="line">print p.sub(func, s, 1)         # 最多替换一次</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hello world, hello world</span><br><span class="line">123 hello, 456 hello</span><br><span class="line">hi 123, hi 456</span><br><span class="line">hi 123, hello 456</span><br></pre></td></tr></table></figure>
+<h2 id="xpath"><a href="#xpath" class="headerlink" title="xpath"></a>xpath</h2><h3 id="python下的安装和使用"><a href="#python下的安装和使用" class="headerlink" title="python下的安装和使用"></a>python下的安装和使用</h3><p>pip install lxml</p>
+<p>lxml是一个html/xmlh解释器，用c实现，解析时会自动补全html文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># xpath_li.py</span><br><span class="line"></span><br><span class="line">from lxml import etree</span><br><span class="line"></span><br><span class="line">#利用etree.HTML，将字符串解析为HTML文档</span><br><span class="line">html = etree.HTML(text) </span><br><span class="line"># 也可以直接，读取外部文件 hello.html</span><br><span class="line">## html = etree.parse(&apos;./hello.html&apos;)</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"># 按字符串序列化HTML文档，得到字串符，可以漂亮的打印出来</span><br><span class="line">result = etree.tostring(html，pretty_print=True) </span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = html.xpath(&apos;//li&apos;)</span><br><span class="line"></span><br><span class="line">print result  # 打印&lt;li&gt;标签的元素集合</span><br><span class="line">print len(result)</span><br><span class="line">print type(result)</span><br><span class="line">print type(result[0])</span><br></pre></td></tr></table></figure>
+<h3 id="xpath开发工具"><a href="#xpath开发工具" class="headerlink" title="xpath开发工具"></a>xpath开发工具</h3><ul>
+<li>开源的XPath表达式编辑工具:XMLQuire(XML格式文件可用)</li>
+<li>Chrome插件 XPath Helper<br>  先点击插件，出现框体，可长按shift直接选择</li>
+<li>Firefox插件 XPath Checker，新版谷歌没了</li>
+</ul>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="选取节点"><a href="#选取节点" class="headerlink" title="选取节点"></a>选取节点</h4><ul>
+<li><p>/bookstore 选取根元素</p>
+</li>
+<li><p>//bookstore 忽视前面的节点，选取bookstore 元素</p>
+</li>
+<li><p>/bookstore/book 选取根元素下的所有book元素</p>
+</li>
+<li><p>//@lang 选取名为lang的所有属性，得到属性的值</p>
+</li>
+<li><p>*表示任何元素节点</p>
+</li>
+<li><p>@*表示任何属性节点</p>
+</li>
+<li><p>node（）表达式任何类型等节点</p>
+</li>
+<li><p>可以使用 | 写多个个表达式表示选取多个路径</p>
+</li>
+</ul>
+<h3 id="谓语"><a href="#谓语" class="headerlink" title="谓语"></a>谓语</h3><ul>
+<li><p>/bookstore/book[1]，选取第一个元素<br>  -方框内 支持last（），last（）-1，positiong（）&lt;3,等语法</p>
+</li>
+<li><p>//title[@lang=’eng’] ，选取  属性lang=eng等元素，eng可以不写，表示拥有这个属性</p>
+</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>可以利用运算符筛选元素<br>详情见</p>
+<p><a href="http://www.w3school.com.cn/xml/index.asp" target="_blank" rel="noopener">W3School官方文档</a></p>
+<h2 id="beautifulSoup4"><a href="#beautifulSoup4" class="headerlink" title="beautifulSoup4"></a>beautifulSoup4</h2><p><a href="http://beautifulsoup.readthedocs.io/zh_CN/v4.4.0" target="_blank" rel="noopener">beautifulSoup4官方文档</a></p>
+<p>基于html dom 会载入所有html元素，效率低</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>pip install beautifulsoup4
+
+需要安装lxml解释器
+</code></pre><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># beautifulsoup4_test.py</span><br><span class="line"></span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">html = &quot;&quot;&quot;</span><br><span class="line">&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p class=&quot;title&quot; name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;</span><br><span class="line">&lt;p class=&quot;story&quot;&gt;Once upon a time there were three little sisters; and their names were</span><br><span class="line">&lt;a href=&quot;http://example.com/elsie&quot; class=&quot;sister&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;,</span><br><span class="line">&lt;a href=&quot;http://example.com/lacie&quot; class=&quot;sister&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt; and</span><br><span class="line">&lt;a href=&quot;http://example.com/tillie&quot; class=&quot;sister&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;;</span><br><span class="line">and they lived at the bottom of a well.&lt;/p&gt;</span><br><span class="line">&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#创建 Beautiful Soup 对象</span><br><span class="line">soup = BeautifulSoup(html)</span><br><span class="line"></span><br><span class="line">#打开本地 HTML 文件的方式来创建对象</span><br><span class="line">#soup = BeautifulSoup(open(&apos;index.html&apos;))</span><br><span class="line"></span><br><span class="line">#格式化输出 soup 对象的内容</span><br><span class="line">print soup.prettify()</span><br></pre></td></tr></table></figure>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="四大对象种类"><a href="#四大对象种类" class="headerlink" title="四大对象种类"></a>四大对象种类</h4><ul>
+<li><p>Tag</p>
+</li>
+<li><p>既 html里面标签，可以不考虑目录直接使用soup.a只会返回第一个元素</p>
+</li>
+<li><p>有两个重要的属性</p>
+<ul>
+<li><p>name 标签的名字 例如a</p>
+</li>
+<li><p>attrs 将标签的属性以字典形式返回，class的值会是一个列表 ，也可以这样直接访问，soup.a[‘href’]，或者使用。get（‘href’） 方法</p>
+</li>
+</ul>
+</li>
+<li><p>NavigableString</p>
+</li>
+<li><p>既标签里的文字</p>
+</li>
+</ul>
+<p>soup.p.string</p>
+<ul>
+<li>BeautifulSoup</li>
+</ul>
+<p>BeautifulSoup对象表示一个文档的内容，大部分时候，可以当做Tag，</p>
+<ul>
+<li>Comment</li>
+</ul>
+<p>一个特殊的NavigableString，如果包含注释就会生出这个对象，输出不包含注释符<br>soup.a.string</p>
+<h4 id="文档树遍历"><a href="#文档树遍历" class="headerlink" title="文档树遍历"></a>文档树遍历</h4><ul>
+<li>.content 属性</li>
+</ul>
+<p>soup.head.contents</p>
+<p>可以将tag子节点以列表的方式输出</p>
+<ul>
+<li><p>.children属性</p>
+<p>输出一个生成器</p>
+<ul>
+<li>. descendants 属性</li>
+</ul>
+<p>递归循环输出所有子孙节点，生成器对象</p>
+<h4 id="文档树的搜索"><a href="#文档树的搜索" class="headerlink" title="文档树的搜索"></a>文档树的搜索</h4><ol>
+<li>find_all(name, attrs, recursive, text, **kwargs)<br>name参数找所有名为name的tag，会自动忽略其他字串符</li>
+</ol>
+</li>
+<li>传字串符</li>
+<li>可以传入一个正则表达式对象<br>soup.find_all(re.compile(“^b”))</li>
+</ul>
+<p>会调用match方法匹配</p>
+<ul>
+<li>传列表，里面的字符串会是或的关系</li>
+</ul>
+<p>keyword 参数</p>
+<ul>
+<li>传入一个字典，会匹配tag里的属性</li>
+</ul>
+<p>text 参数</p>
+<ul>
+<li>tag里的内容，同name的可选参数一样</li>
+</ul>
+<p>如果不指定name，会只返回匹配到 的字串符，指定了返回一个标签的字串符，列表</p>
+<h4 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h4><p>可以利用css选择器的语法</p>
+<p>print soup.select(‘p #link1’)</p>
+<p>返回一个列表，可以遍历输出然后使用.get_text()返回内容</p>
+<h1 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h1><h2 id="代理ip"><a href="#代理ip" class="headerlink" title="代理ip"></a>代理ip</h2><h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><p>机器视觉与Tesseract</p>
+<p>验证码识别训练</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/old_post/python爬虫.html" rel="next" title="python爬虫">
+                <i class="fa fa-chevron-left"></i> python爬虫
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/old_post/代码审计入门总结.html" rel="prev" title="代码审计入门总结">
+                代码审计入门总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzgwMC8yMDMzOQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wendell</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tongweigii@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#信息获取"><span class="nav-number">1.</span> <span class="nav-text">信息获取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#静态html"><span class="nav-number">1.1.</span> <span class="nav-text">静态html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态html"><span class="nav-number">1.2.</span> <span class="nav-text">动态html</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接从-JavaScript-代码里采集内容"><span class="nav-number">1.2.1.</span> <span class="nav-text">直接从 JavaScript 代码里采集内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selenium-PhantomJS"><span class="nav-number">1.2.2.</span> <span class="nav-text">Selenium+PhantomJS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#快速入门"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面操作"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">页面操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定位UI元素-WebElements"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">定位UI元素 (WebElements)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#关于元素的选取，有如下的API-单个元素选取"><span class="nav-number">1.2.2.3.1.</span> <span class="nav-text">关于元素的选取，有如下的API 单个元素选取</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标动作链"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">鼠标动作链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#填充表单"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">填充表单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#index-索引从-0-开始"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">index 索引从 0 开始</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#value是option标签的一个属性值，并不是显示在下拉框中的值"><span class="nav-number">1.2.2.7.</span> <span class="nav-text">value是option标签的一个属性值，并不是显示在下拉框中的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#visible-text是在option标签文本的值，是显示在下拉框的值"><span class="nav-number">1.2.2.8.</span> <span class="nav-text">visible_text是在option标签文本的值，是显示在下拉框的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#弹窗处理"><span class="nav-number">1.2.2.9.</span> <span class="nav-text">弹窗处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面切换"><span class="nav-number">1.2.2.10.</span> <span class="nav-text">页面切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面前进和后退"><span class="nav-number">1.2.2.11.</span> <span class="nav-text">页面前进和后退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookies"><span class="nav-number">1.2.2.12.</span> <span class="nav-text">Cookies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面等待"><span class="nav-number">1.2.2.13.</span> <span class="nav-text">页面等待</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#显式等待"><span class="nav-number">1.2.2.13.1.</span> <span class="nav-text">显式等待</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#隐式等待"><span class="nav-number">1.2.2.13.2.</span> <span class="nav-text">隐式等待</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程"><span class="nav-number">1.3.</span> <span class="nav-text">多线程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息提取"><span class="nav-number">2.</span> <span class="nav-text">信息提取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#json"><span class="nav-number">2.1.</span> <span class="nav-text">json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-json"><span class="nav-number">2.2.</span> <span class="nav-text">import json</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-json-loads"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. json.loads()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-json-dumps"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. json.dumps()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-json-dump"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. json.dump()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-json-load"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. json.load()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JsonPath"><span class="nav-number">2.3.</span> <span class="nav-text">JsonPath</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JsonPath与XPath语法对比："><span class="nav-number">2.4.</span> <span class="nav-text">JsonPath与XPath语法对比：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">2.5.</span> <span class="nav-text">正则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">2.5.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-的使用"><span class="nav-number">2.5.2.</span> <span class="nav-text">python 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#match-方法：从起始位置开始查找，一次匹配"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">match 方法：从起始位置开始查找，一次匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#search-方法：从任何位置开始查找，一次匹配"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">search 方法：从任何位置开始查找，一次匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#findall-方法：全部匹配，返回列表"><span class="nav-number">2.5.2.3.</span> <span class="nav-text">findall 方法：全部匹配，返回列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#finditer-方法：全部匹配，返回迭代器"><span class="nav-number">2.5.2.4.</span> <span class="nav-text">finditer 方法：全部匹配，返回迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-方法：分割字符串，返回列表"><span class="nav-number">2.5.2.5.</span> <span class="nav-text">split 方法：分割字符串，返回列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sub-方法：替换"><span class="nav-number">2.5.2.6.</span> <span class="nav-text">sub 方法：替换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xpath"><span class="nav-number">2.6.</span> <span class="nav-text">xpath</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python下的安装和使用"><span class="nav-number">2.6.1.</span> <span class="nav-text">python下的安装和使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xpath开发工具"><span class="nav-number">2.6.2.</span> <span class="nav-text">xpath开发工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">2.6.3.</span> <span class="nav-text">基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选取节点"><span class="nav-number">2.6.3.1.</span> <span class="nav-text">选取节点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谓语"><span class="nav-number">2.6.4.</span> <span class="nav-text">谓语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">2.6.5.</span> <span class="nav-text">运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#beautifulSoup4"><span class="nav-number">2.7.</span> <span class="nav-text">beautifulSoup4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.7.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本使用"><span class="nav-number">2.7.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">2.7.3.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四大对象种类"><span class="nav-number">2.7.3.1.</span> <span class="nav-text">四大对象种类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文档树遍历"><span class="nav-number">2.7.3.2.</span> <span class="nav-text">文档树遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文档树的搜索"><span class="nav-number">2.7.3.3.</span> <span class="nav-text">文档树的搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css选择器"><span class="nav-number">2.7.3.4.</span> <span class="nav-text">css选择器</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反爬虫"><span class="nav-number">3.</span> <span class="nav-text">反爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代理ip"><span class="nav-number">3.1.</span> <span class="nav-text">代理ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证码"><span class="nav-number">3.2.</span> <span class="nav-text">验证码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wendell</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">66.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<br>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("03/15/2019 10:22:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?05d599349e61768582010a6d33f2c57b":"https://jspassport.ssl.qhimg.com/11.0.1.js?05d599349e61768582010a6d33f2c57b";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

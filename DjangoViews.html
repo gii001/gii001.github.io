@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Django,python,web开发,mvc,学习笔记,mvt,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Wendell's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="传智博客的python的笔记">
+<meta name="keywords" content="Django,python,web开发,mvc,学习笔记,mvt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DjangoViews">
+<meta property="og:url" content="http://blog.wendelltong.xyz/DjangoViews.html">
+<meta property="og:site_name" content="Wendell&#39;s blog">
+<meta property="og:description" content="传智博客的python的笔记">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-23T05:40:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DjangoViews">
+<meta name="twitter:description" content="传智博客的python的笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.wendelltong.xyz/DjangoViews.html">
+
+
+
+
+
+  <title>DjangoViews | Wendell's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wendell's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.wendelltong.xyz/DjangoViews.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wendell">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wendell's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">DjangoViews</h2>
+        
+
+        <div class="post-meta">
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-18T10:36:10+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web开发/" itemprop="url" rel="index">
+                    <span itemprop="name">web开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>传智博客的python的笔记<br><a id="more"></a></p>
+<h1 id="URLconf"><a href="#URLconf" class="headerlink" title="URLconf"></a>URLconf</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li>manage.py项目入口，指向项目的setting.py在settings.py文件中通过ROOT_URLCONF指定根级url的配置</li>
+<li>urlpatterns是一个url()实例的列表</li>
+<li>一个url()对象包括：<ul>
+<li>正则表达式</li>
+<li>视图函数</li>
+<li>名称name</li>
+</ul>
+</li>
+<li>编写URLconf的注意：<ul>
+<li>若要从url中捕获一个值，需要在它周围设置一对圆括号</li>
+<li>不需要添加一个前导的反斜杠，如应该写作’test/‘，而不应该写作’/test/‘</li>
+<li>每个正则表达式前面的r表示字符串不转义</li>
+</ul>
+</li>
+<li>请求的url被看做是一个普通的python字符串，进行匹配时不包括get或post请求的参数及域名`</li>
+</ul>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ul>
+<li>先利用import包含视图，通过关键字参数传递给视图，本例中关键字参数为id，可以不指定关键字，则按顺序给视图</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url(r&apos;^(?P&lt;id&gt;[0-9]+)/$&apos;, views.detail, name=&apos;detail&apos;),</span><br></pre></td></tr></table></figure>
+<h3 id="包含其它的URLconfs"><a href="#包含其它的URLconfs" class="headerlink" title="包含其它的URLconfs"></a>包含其它的URLconfs</h3><ul>
+<li>在应用中创建urls.py文件，定义本应用中的urlconf，再在项目的settings中使用include()，包含本应用的url，注意需要用引号包裹，可以除去urlconf冗余</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import include, url</span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^&apos;, include(&apos;booktest.urls&apos;, namespace=&apos;booktest&apos;)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>匹配过程：先与主URLconf匹配，通常会带者后面的斜杠，成功后再将剩余的部分与应用中的URLconf匹配，</p>
+</li>
+<li><p>参数：视图会收到来自父URLconf、当前URLconf捕获的所有参数</p>
+</li>
+<li>在include中通过namespace定义命名空间，用于反解析，通常在父级目录</li>
+</ul>
+<h4 id="URL的反向解析"><a href="#URL的反向解析" class="headerlink" title="URL的反向解析"></a>URL的反向解析</h4><p>硬链接在视图模板中难以维护，使用反向解析，可以解决这个问题</p>
+<ul>
+<li>视图：使用django.core.urlresolvers.reverse()函数</li>
+<li>模板：使用url模板标签</li>
+</ul>
+<h1 id="视图函数"><a href="#视图函数" class="headerlink" title="视图函数"></a>视图函数</h1><h2 id="定义视图"><a href="#定义视图" class="headerlink" title="定义视图"></a>定义视图</h2><p>在views.py 中编写函数，在 url.py 中引用</p>
+<h2 id="错误视图"><a href="#错误视图" class="headerlink" title="错误视图"></a>错误视图</h2><blockquote>
+<p>Django 自带几个错误视图用于处理http错误</p>
+</blockquote>
+<h3 id="404-错误"><a href="#404-错误" class="headerlink" title="404 错误"></a>404 错误</h3><ul>
+<li>defaults.page_not_found(request, template_name=’404.html’)</li>
+<li>需要在templates中创建404.html</li>
+<li><ul>
+<li>默认的404视图将传递一个变量给模板：request_path，它是导致错误的URL</li>
+</ul>
+</li>
+<li>需要将debug改为false，并且在<br>ALLOWED_HOSTS 添加允许的url 如 ‘*’</li>
+</ul>
+<h3 id="500错误"><a href="#500错误" class="headerlink" title="500错误"></a>500错误</h3><p>同404 默认不传递变量给模板</p>
+<h3 id="400"><a href="#400" class="headerlink" title="400"></a>400</h3><p>错误来自客户端的操作<br>同500</p>
+<h1 id="HttpReqeust对象"><a href="#HttpReqeust对象" class="headerlink" title="HttpReqeust对象"></a>HttpReqeust对象</h1><p>服务器根据报文创建，需要在视图的第一个参数接收</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><blockquote>
+<p> 下面除非特别说明，httpreqeust属性都是只读的</p>
+</blockquote>
+<ul>
+<li>path：一个字符串，表示请求的页面的完整路径，不包含域名</li>
+<li>method：一个字符串，表示请求使用的HTTP方法，常用值包括：’GET’、’POST’</li>
+<li>encoding：一个字符串，表示提交的数据的编码方式<ul>
+<li>如果为None则表示使用浏览器的默认设置，一般为utf-8</li>
+<li>这个属性是可写的，可以通过修改它来修改访问表单数据使用的编码，接下来对属性的任何访问将使用新的encoding值</li>
+</ul>
+</li>
+<li>GET：一个类似于字典的对象，QueryDict对象，与字典的差别，可能存在一键多值，使用dict.getlist(‘键’,default)返回列表，.get 只会返回最后一个值，使用包含get请求方式的所有参数</li>
+<li>POST：一个类似于字典的对象，包含post请求方式的所有参数</li>
+<li>FILES：一个类似于字典的对象，包含所有的上传文件</li>
+<li>COOKIES：一个标准的Python字典，包含所有的cookie，键和值都为字符串</li>
+<li>session：一个既可读又可写的类似于字典的对象，表示当前的会话，只有当Django 启用会话的支持时才可用，详细内容见“状态保持”</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>is_ajax()：如果请求是通过XMLHttpRequest发起的，则返回True</li>
+</ul>
+<h1 id="HttpResponse对象"><a href="#HttpResponse对象" class="headerlink" title="HttpResponse对象"></a>HttpResponse对象</h1><p>浏览器返回的请求对象</p>
+<h2 id="基本写法"><a href="#基本写法" class="headerlink" title="基本写法"></a>基本写法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line">from django.template import RequestContext, loader</span><br><span class="line">#简写函数</span><br><span class="line">from django.shortcuts import render</span><br><span class="line">def index(request):</span><br><span class="line">    &apos;&apos;&apos; </span><br><span class="line">    t1 = loader.get_template(&apos;polls/index.html&apos;)</span><br><span class="line">    context = RequestContext(request, &#123;&apos;h1&apos;: &apos;hello&apos;&#125;)</span><br><span class="line">    return HttpResponse(t1.render(context))</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    # 简写</span><br><span class="line">    return render(request, &apos;booktest/index.html&apos;, &#123;&apos;h1&apos;: &apos;hello&apos;&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h2><ul>
+<li>content：表示返回的内容，字符串类型</li>
+<li>charset：表示response采用的编码字符集，字符串类型</li>
+<li>status_code：响应的HTTP响应状态码</li>
+<li>content-type：指定输出的MIME类型</li>
+</ul>
+<h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>init ：使用页内容实例化HttpResponse对象</li>
+<li>write(content)：以文件的方式写</li>
+<li>flush()：以文件的方式输出缓存区</li>
+<li>set_cookie(key, value=’’, max_age=None, expires=None)：设置Cookie<ul>
+<li>key、value都是字符串类型</li>
+<li>max_age是一个整数，表示在指定秒数后过期</li>
+<li>expires是一个datetime或timedelta对象，会话将在这个指定的日期/时间过期，注意datetime和timedelta值只有在使用PickleSerializer时才可序列化</li>
+<li>max_age与expires二选一</li>
+<li>如果不指定过期时间，则两个星期后过期</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line">from datetime import *</span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    response = HttpResponse()</span><br><span class="line">    if request.COOKIES.has_key(&apos;h1&apos;):</span><br><span class="line">        response.write(&apos;&apos; + request.COOKIES[&apos;h1&apos;] + &apos;&apos;)</span><br><span class="line">    response.set_cookie(&apos;h1&apos;, &apos;你好&apos;, 120)</span><br><span class="line">    # response.set_cookie(&apos;h1&apos;, &apos;你好&apos;, None, datetime(2016, 10, 31))</span><br><span class="line">    return response</span><br></pre></td></tr></table></figure>
+<ul>
+<li>delete_cookie(key)：删除指定的key的Cookie，如果key不存在则什么也不发生</li>
+</ul>
+<h2 id="两个子类"><a href="#两个子类" class="headerlink" title="两个子类"></a>两个子类</h2><h3 id="子类HttpResponseRedirect"><a href="#子类HttpResponseRedirect" class="headerlink" title="子类HttpResponseRedirect"></a>子类HttpResponseRedirect</h3><p>重定项，构造函数第一个对象为重定向的地址，为域名端口后面的部分，</p>
+<ul>
+<li>推荐使用反向解析</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from django.core.urlresolvers import reverse</span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    return HttpResponseRedirect(reverse(&apos;booktest:index2&apos;, args=(1,)))</span><br></pre></td></tr></table></figure>
+<p>可以使用redirect（）函数简写，需要</p>
+<blockquote>
+<p>from django.shortcuts import redirect</p>
+</blockquote>
+<h3 id="子类JsonResponse"><a href="#子类JsonResponse" class="headerlink" title="子类JsonResponse"></a>子类JsonResponse</h3><p>返回json， JsonResponse的默认Content-Type为application/json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from django.http import JsonResponse</span><br><span class="line"></span><br><span class="line">def index2(requeset):</span><br><span class="line">    return JsonResponse(&#123;&apos;list&apos;: &apos;abc&apos;&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="简写函数"><a href="#简写函数" class="headerlink" title="简写函数"></a>简写函数</h3><ul>
+<li>render</li>
+<li>redirect</li>
+<li><p>get_object_or_404(klass, args, *kwargs)</p>
+<ul>
+<li>通过模型管理器或查询集调用get()方法，如果没找到对象，不引发模型的DoesNotExist异常，而是引发Http404异常,返回404错误页面，如果找到多个对象将引发MultipleObjectsReturned异常<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from django.shortcuts import *</span><br><span class="line"></span><br><span class="line">def detail(request, id):</span><br><span class="line">    try:</span><br><span class="line">        book = get_object_or_404(BookInfo, pk=id)</span><br><span class="line">    except BookInfo.MultipleObjectsReturned:</span><br><span class="line">        book = None</span><br><span class="line">    return render(request, &apos;booktest/detail.html&apos;, &#123;&apos;book&apos;: book&#125;)</span><br><span class="line"></span><br><span class="line">将settings.py中的DEBUG改为False</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>get_list_or_404(klass, args, *kwargs)</p>
+</li>
+</ul>
+<p>同上，不过是列表</p>
+<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><ul>
+<li>使用cookie，所有数据存储在客户端，注意不要存储敏感信息</li>
+<li>推荐使用sesison方式，所有数据存储在服务器端，在客户端cookie中存储session_id</li>
+</ul>
+<h2 id="启用session"><a href="#启用session" class="headerlink" title="启用session"></a>启用session</h2><ul>
+<li>使用django-admin startproject创建的项目默认启用</li>
+<li>在settings.py文件中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">项INSTALLED_APPS列表中添加：</span><br><span class="line">&apos;django.contrib.sessions&apos;,</span><br><span class="line"></span><br><span class="line">项MIDDLEWARE_CLASSES列表中添加：</span><br><span class="line">&apos;django.contrib.sessions.middleware.SessionMiddleware&apos;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>禁用会话：删除上面指定的两个值，禁用会话将节省一些性能消耗</li>
+</ul>
+<h2 id="使用session"><a href="#使用session" class="headerlink" title="使用session"></a>使用session</h2><ul>
+<li>启用会话后，每个HttpRequest对象将具有一个session属性，它是一个类字典对象</li>
+<li>get(key, default=None)：根据键获取会话的值</li>
+<li>clear()：清除所有会话</li>
+<li>flush()：删除当前的会话数据并删除会话的Cookie</li>
+<li>del request.session[‘member_id’]：删除会话</li>
+</ul>
+<h3 id="会话过期时间"><a href="#会话过期时间" class="headerlink" title="会话过期时间"></a>会话过期时间</h3><ul>
+<li>set_expiry(value)：设置会话的超时时间</li>
+<li>如果没有指定，则两个星期后过期</li>
+<li>如果value是一个整数，会话将在values秒没有活动后过期</li>
+<li>若果value是一个imedelta对象，会话将在当前时间加上这个指定的日期/时间过期</li>
+<li>如果value为0，那么用户会话的Cookie将在用户的浏览器关闭时过期</li>
+<li>如果value为None，那么会话永不过期</li>
+<li>修改视图中login_handle函数，查看效果</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def login_handle(request):</span><br><span class="line">    request.session[&apos;uname&apos;] = request.POST[&apos;uname&apos;]</span><br><span class="line">    # request.session.set_expiry(10)</span><br><span class="line">    # request.session.set_expiry(timedelta(days=5))</span><br><span class="line">    # request.session.set_expiry(0)</span><br><span class="line">    # request.session.set_expiry(None)</span><br><span class="line">    return redirect(reverse(&apos;main:index&apos;))</span><br></pre></td></tr></table></figure>
+<h3 id="存储session"><a href="#存储session" class="headerlink" title="存储session"></a>存储session</h3><ul>
+<li>使用存储会话的方式，可以使用settings.py的SESSION_ENGINE项指定,需要自己添加</li>
+<li>基于数据库的会话：这是django默认的会话存储方式，需要添加django.contrib.sessions到的INSTALLED_APPS设置中，运行manage.py migrate在数据库中安装会话表，可显示指定为</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SESSION_ENGINE=&apos;django.contrib.sessions.backends.db&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>基于缓存的会话：只存在本地内在中，如果丢失则不能找回，比数据库的方式读写更快</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SESSION_ENGINE=&apos;django.contrib.sessions.backends.cache&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以将缓存和数据库同时使用：优先从本地缓存中获取，如果没有则从数据库中获取</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SESSION_ENGINE=&apos;django.contrib.sessions.backends.cached_db&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="使用Redis缓存session"><a href="#使用Redis缓存session" class="headerlink" title="使用Redis缓存session"></a>使用Redis缓存session</h3><ul>
+<li>会话还支持文件、纯cookie、Memcached、Redis等方式存储，下面演示使用redis存储</li>
+<li>安装包</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-redis-sessions</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改settings中的配置，增加如下项</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SESSION_ENGINE = &apos;redis_sessions.session&apos;</span><br><span class="line">SESSION_REDIS_HOST = &apos;localhost&apos;</span><br><span class="line">SESSION_REDIS_PORT = 6379</span><br><span class="line">SESSION_REDIS_DB = 0</span><br><span class="line">SESSION_REDIS_PASSWORD = &apos;&apos;</span><br><span class="line">SESSION_REDIS_PREFIX = &apos;session&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>管理redis的命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">启动：sudo redis-server /etc/redis/redis.conf</span><br><span class="line">停止：sudo redis-server stop</span><br><span class="line">重启：sudo redis-server restart</span><br><span class="line">redis-cli：使用客户端连接服务器</span><br><span class="line">keys *：查看所有的键</span><br><span class="line">get name：获取指定键的值</span><br><span class="line">del name：删除指定名称的键</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Django/" rel="tag"># Django</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/web开发/" rel="tag"># web开发</a>
+          
+            <a href="/tags/mvc/" rel="tag"># mvc</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/mvt/" rel="tag"># mvt</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Django基本操作相关.html" rel="next" title="基本操作相关">
+                <i class="fa fa-chevron-left"></i> 基本操作相关
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/old_post/DjangoViews.html" rel="prev" title="DjangoViews">
+                DjangoViews <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzgwMC8yMDMzOQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wendell</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tongweigii@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#URLconf"><span class="nav-number">1.</span> <span class="nav-text">URLconf</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">1.2.</span> <span class="nav-text">基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#包含其它的URLconfs"><span class="nav-number">1.2.1.</span> <span class="nav-text">包含其它的URLconfs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#URL的反向解析"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">URL的反向解析</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图函数"><span class="nav-number">2.</span> <span class="nav-text">视图函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义视图"><span class="nav-number">2.1.</span> <span class="nav-text">定义视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误视图"><span class="nav-number">2.2.</span> <span class="nav-text">错误视图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#404-错误"><span class="nav-number">2.2.1.</span> <span class="nav-text">404 错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#500错误"><span class="nav-number">2.2.2.</span> <span class="nav-text">500错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#400"><span class="nav-number">2.2.3.</span> <span class="nav-text">400</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HttpReqeust对象"><span class="nav-number">3.</span> <span class="nav-text">HttpReqeust对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HttpResponse对象"><span class="nav-number">4.</span> <span class="nav-text">HttpResponse对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本写法"><span class="nav-number">4.1.</span> <span class="nav-text">基本写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性-1"><span class="nav-number">4.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-1"><span class="nav-number">4.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两个子类"><span class="nav-number">4.4.</span> <span class="nav-text">两个子类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子类HttpResponseRedirect"><span class="nav-number">4.4.1.</span> <span class="nav-text">子类HttpResponseRedirect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子类JsonResponse"><span class="nav-number">4.4.2.</span> <span class="nav-text">子类JsonResponse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简写函数"><span class="nav-number">4.4.3.</span> <span class="nav-text">简写函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#session"><span class="nav-number">5.</span> <span class="nav-text">session</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启用session"><span class="nav-number">5.1.</span> <span class="nav-text">启用session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用session"><span class="nav-number">5.2.</span> <span class="nav-text">使用session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#会话过期时间"><span class="nav-number">5.2.1.</span> <span class="nav-text">会话过期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储session"><span class="nav-number">5.2.2.</span> <span class="nav-text">存储session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Redis缓存session"><span class="nav-number">5.2.3.</span> <span class="nav-text">使用Redis缓存session</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wendell</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">66.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<br>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("03/15/2019 10:22:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?05d599349e61768582010a6d33f2c57b":"https://jspassport.ssl.qhimg.com/11.0.1.js?05d599349e61768582010a6d33f2c57b";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web安全,学习笔记,白帽子讲web安全,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Wendell's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="笔记">
+<meta name="keywords" content="web安全,学习笔记,白帽子讲web安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="白帽子讲web安全笔记">
+<meta property="og:url" content="http://blog.wendelltong.xyz/old_post/白帽子讲web安全笔记.html">
+<meta property="og:site_name" content="Wendell&#39;s blog">
+<meta property="og:description" content="笔记">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413112819665.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413112850620.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413051317496.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413051328757.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413053036228.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413053055419.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413053119663.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413054212900.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413054225265.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413054649655.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/白帽子讲web安全笔记/html.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413103728433.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413103939499.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413105600683.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413110333678.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/白帽子讲web安全笔记/ie，.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413110539087.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416113659194.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416113705757.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114249817.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114331744.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114345252.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114738380.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115028705.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115340165.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115705865.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115646065.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416122938612.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416123317666.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416053926740.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416054911803.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416061604134.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416061735302.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416063243060.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416065353817.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416065917158.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416070256759.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416070644168.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416070803780.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416090615912.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416090744533.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416093737635.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416094943681.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416095114287.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416095334040.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416112638728.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416112718856.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190417012242664.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190417013004916.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190417013051890.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418102732598.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418102946431.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418103005365.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418103118891.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418110401084.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418110644650.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418112011049.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418065724831.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418070913650.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418074015686.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418074035611.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418082213768.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083323876.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083333644.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083352732.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083406237.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418084018486.png">
+<meta property="og:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418084104980.png">
+<meta property="og:updated_time" content="2019-06-01T03:35:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="白帽子讲web安全笔记">
+<meta name="twitter:description" content="笔记">
+<meta name="twitter:image" content="http://blog.wendelltong.xyz/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413112819665.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.wendelltong.xyz/old_post/白帽子讲web安全笔记.html">
+
+
+
+
+
+  <title>白帽子讲web安全笔记 | Wendell's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wendell's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.wendelltong.xyz/old_post/白帽子讲web安全笔记.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wendell">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wendell's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">白帽子讲web安全笔记</h2>
+        
+
+        <div class="post-meta">
+		
+		<i class="fa fa-thumb-tack"></i>
+		<font color="7D26CD">置顶</font>
+		<span class="post-meta-divider">|</span>
+		
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T10:31:30+08:00">
+                2019-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  6.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>笔记<br><a id="more"></a></p>
+<h1 id="安全世界观"><a href="#安全世界观" class="headerlink" title="安全世界观"></a>安全世界观</h1><h2 id="web安全简史"><a href="#web安全简史" class="headerlink" title="web安全简史"></a>web安全简史</h2><p><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413112819665.png" alt><br><img src="/old_post/images/atricleImages/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413112850620.png" alt></p>
+<h3 id="web安全的兴起"><a href="#web安全的兴起" class="headerlink" title="web安全的兴起"></a>web安全的兴起</h3><ul>
+<li>动态脚本安全问题</li>
+<li>sql，xss，csrf出现</li>
+<li>web攻击从服务端转向客户端</li>
+<li>新型脚本语言，html5，新的变化</li>
+</ul>
+<h3 id="安全的本质"><a href="#安全的本质" class="headerlink" title="安全的本质"></a>安全的本质</h3><ul>
+<li>信任问题</li>
+<li>安全是一个持续的过程<h3 id="安全三要素"><a href="#安全三要素" class="headerlink" title="安全三要素"></a>安全三要素</h3><ul>
+<li>机密性</li>
+<li>完整性<ul>
+<li>数据内容完整没有别篡改</li>
+<li>数字签名</li>
+</ul>
+</li>
+<li>可用性<ul>
+<li>随需而得</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="白帽子兵法"><a href="#白帽子兵法" class="headerlink" title="白帽子兵法"></a>白帽子兵法</h2><h3 id="Secure-By-Default-原则"><a href="#Secure-By-Default-原则" class="headerlink" title="Secure By Default 原则"></a>Secure By Default 原则</h3><pre><code>- 白名单黑名单
+- 最小权限原则
+- 纵深防御原则（Secure by default）
+    - 将风险分散到系统的个个层面
+    - 在正确的地方做正确的事
+- 数据与代码分离原则
+- 不可预测性原则
+</code></pre><h2 id="附录（谁来为漏洞买单）"><a href="#附录（谁来为漏洞买单）" class="headerlink" title="附录（谁来为漏洞买单）"></a>附录（谁来为漏洞买单）</h2><pre><code>- 很多问题只是功能，不是漏洞
+</code></pre><h1 id="浏览器安全"><a href="#浏览器安全" class="headerlink" title="浏览器安全"></a>浏览器安全</h1><h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><ul>
+<li>当javaScript被认为来自不同源时，请求会被拒绝</li>
+<li>影响源的因素host（域名或ip，ip会被认为为根域名），子域名，端口，协议</li>
+<li>浏览器看的是加载JavaScript文件的页面所在域</li>
+<li><code>&lt;img&gt;&lt;script&gt;&lt;iframe&gt;&lt;link&gt;</code>等标签可以跨域加载资源，其实是带“src”属性的标签，这些资源JavaScript不能读写</li>
+<li>通过目标域http头 access-control-allow-origin 来判断是否可以跨域</li>
+<li></li>
+<li><p>第三方插件也会受同源策略的限制，如flash，Java applet</p>
+<ul>
+<li>flash 会 通过目标网站的crossdomain.xml文件判断</li>
+<li>flash 9 以后，mime检查，根目录检查</li>
+</ul>
+</li>
+<li>ie 8 css跨域漏洞<ul>
+<li>fontFamily 后面的内容被当作了value，从而可以被读</li>
+</ul>
+</li>
+</ul>
+<h2 id="浏览器沙箱"><a href="#浏览器沙箱" class="headerlink" title="浏览器沙箱"></a>浏览器沙箱</h2><ul>
+<li>多进程，行为分离</li>
+</ul>
+<h2 id="恶意网站拦截"><a href="#恶意网站拦截" class="headerlink" title="恶意网站拦截"></a>恶意网站拦截</h2><ul>
+<li>黑名单<ul>
+<li>挂马</li>
+<li>钓鱼</li>
+</ul>
+</li>
+<li><p>evssl证书</p>
+<h2 id="高速发展的浏览器安全"><a href="#高速发展的浏览器安全" class="headerlink" title="高速发展的浏览器安全"></a>高速发展的浏览器安全</h2></li>
+<li><p>浏览器的xss fifter 功能</p>
+</li>
+<li>csp 内容安全策略</li>
+<li>畸形url处理的安全隐患<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413051317496.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413051328757.png" alt></li>
+<li>浏览器插件的安全问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ul>
+<li>反射型xss</li>
+<li>储存型</li>
+<li>DOM Based XSS</li>
+</ul>
+<h2 id="攻击进阶"><a href="#攻击进阶" class="headerlink" title="攻击进阶"></a>攻击进阶</h2><ul>
+<li>盗取cookie</li>
+<li>伪造get或post请求<ul>
+<li>可能的问题</li>
+<li>提交表单需要验证码<ul>
+<li>获取到验证码，发送到远端服务器，返回解码后内容</li>
+</ul>
+</li>
+<li>修改密码，需要old password <ul>
+<li>画一个登录框，输入密码后，发送的黑客服务器上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>识别用户浏览器<ul>
+<li>useragent 对象<ul>
+<li>os版本，浏览器版本，系统语言</li>
+</ul>
+</li>
+<li>利用浏览器实现的差异</li>
+</ul>
+</li>
+<li>识别用户安装的软件<ul>
+<li>ie 可以通过判断ActiveX 控件的classid 是否存在，推断安装的软件</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413053036228.png" alt></li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413053055419.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413053119663.png" alt></li>
+</ul>
+</li>
+<li>css History hack<ul>
+<li>利用浏览过的a的样式不同，获取用户的浏览历史，firefox 在2010.3决定修复这个问题</li>
+</ul>
+</li>
+<li>获取本地ip地址<ul>
+<li>安装了java环境，java applet 的接口</li>
+</ul>
+</li>
+</ul>
+<h3 id="攻击平台"><a href="#攻击平台" class="headerlink" title="攻击平台"></a>攻击平台</h3><h3 id="xss-Worm"><a href="#xss-Worm" class="headerlink" title="xss Worm"></a>xss Worm</h3><h3 id="调试javaScript"><a href="#调试javaScript" class="headerlink" title="调试javaScript"></a>调试javaScript</h3><p>firebug</p>
+<h3 id="xss构造技巧"><a href="#xss构造技巧" class="headerlink" title="xss构造技巧"></a>xss构造技巧</h3><h4 id="利用字符编码"><a href="#利用字符编码" class="headerlink" title="利用字符编码"></a>利用字符编码</h4><p>类似sql里的宽字节注入</p>
+<p>返回页面时GBK/GB2312 编码，%c1\ 会变成一个unicode 字符，在fireofx会认为是一个字符<br><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413054212900.png" alt><br><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413054225265.png" alt></p>
+<h4 id="绕过长度限制"><a href="#绕过长度限制" class="headerlink" title="绕过长度限制"></a>绕过长度限制</h4><ul>
+<li>利用事件缩短代码长度</li>
+<li>利用location.hash 藏代码，并且url中#后面的内容不会发送<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413054649655.png" alt></li>
+<li>如果有多个文本框可以利用注释，或者构造变量</li>
+<li>利用base标签，它可以插入任何位置，可以劫持标签后所有使用相对路径的标签</li>
+<li>利用window.name 的妙用<ul>
+<li>当前窗口的名字，不受同源策略的限制</li>
+<li>黑客可以先利用a.com设置好window.name 然后跳转b.com b.com可以直接eval(name)</li>
+<li>apache 1.3.34，2.0.57，2.2.1及以下<ul>
+<li>服务器出错时，如果请求有Expect 头，会将内容直接返回，形成xss漏洞</li>
+<li>可以利用flash构造expect头，以修补</li>
+<li>java applet<h4 id="anehta-的回旋镖"><a href="#anehta-的回旋镖" class="headerlink" title="anehta 的回旋镖"></a>anehta 的回旋镖</h4></li>
+</ul>
+</li>
+<li>将反射型xss像存储型一样使用</li>
+<li>在a域，嵌入反射型的b域，即可将反射型xss像存储型一样使用</li>
+<li>ie 对<code>&lt;iframe&gt;&lt;img&gt;&lt;link&gt;</code>等标签会拦截cookie的发送，故要利用form 表单，跳转到b，在跳回来，缺点，url地址会变化<h3 id="flash-xss"><a href="#flash-xss" class="headerlink" title="flash xss"></a>flash xss</h3></li>
+</ul>
+</li>
+</ul>
+<p>flash中可以嵌入actionscript 脚本，甚至发起网络连接</p>
+<h3 id="javascript-开发框架"><a href="#javascript-开发框架" class="headerlink" title="javascript 开发框架"></a>javascript 开发框架</h3><p>可能的DOM　Based　XSS　问题</p>
+<h2 id="xss-的防御"><a href="#xss-的防御" class="headerlink" title="xss 的防御"></a>xss 的防御</h2><h3 id="httponly"><a href="#httponly" class="headerlink" title="httponly"></a>httponly</h3><p>给cookie设置这个值，阻止JavaScript读cookie</p>
+<h3 id="输入检查"><a href="#输入检查" class="headerlink" title="输入检查"></a>输入检查</h3><ul>
+<li>同时在客户端服务端检查<ul>
+<li>全局型xss filter，没有输出的全文语境，容易漏报</li>
+<li>可能改变用户输入的语义</li>
+<li>如果在输入的地方统一对数据做了改变，在不同代码输出时，可能显示不同</li>
+</ul>
+</li>
+</ul>
+<h3 id="输出检查"><a href="#输出检查" class="headerlink" title="输出检查"></a>输出检查</h3><h4 id="安全编码函数"><a href="#安全编码函数" class="headerlink" title="安全编码函数"></a>安全编码函数</h4><h4 id="只需要一种编码吗？"><a href="#只需要一种编码吗？" class="headerlink" title="只需要一种编码吗？"></a>只需要一种编码吗？</h4><ul>
+<li>注意变量的输出语境，<img src="/old_post/images/atricleImages/白帽子讲web安全笔记/html.png" alt="html"></li>
+</ul>
+<h3 id="正确的防御xss"><a href="#正确的防御xss" class="headerlink" title="正确的防御xss"></a>正确的防御xss</h3><p>根据不同的场景，一一解决</p>
+<ul>
+<li>html 标签中输出<ul>
+<li>htmlencode</li>
+</ul>
+</li>
+<li>html 属性中输出<ul>
+<li>htmlencode<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413103728433.png" alt></li>
+</ul>
+</li>
+<li>在<code>&lt;script&gt;</code> 中输出<ul>
+<li>确保变量在引号中</li>
+<li>同时使用javascriptencode</li>
+</ul>
+</li>
+<li>在事件中输出<ul>
+<li>使用javascriptencode</li>
+</ul>
+</li>
+<li>在css中输出<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413103939499.png" alt></li>
+</ul>
+</li>
+<li>在地址中输出<ul>
+<li>url编码</li>
+<li>如果是整个地址<ul>
+<li>不能直接url编码，可以改变意义</li>
+<li>javascript 伪协议</li>
+<li>dataurl 伪协议 mozilla 支持</li>
+<li>先检查开头是不是http，在url编码<h3 id="富文本处理"><a href="#富文本处理" class="headerlink" title="富文本处理"></a>富文本处理</h3></li>
+</ul>
+</li>
+<li>尽量使用白名单<ul>
+<li>标签</li>
+<li>css</li>
+</ul>
+</li>
+<li>开源过滤项目</li>
+</ul>
+</li>
+</ul>
+<h3 id="防御DOM-Based-XSS"><a href="#防御DOM-Based-XSS" class="headerlink" title="防御DOM Based XSS"></a>防御DOM Based XSS</h3><p>输出到<code>&lt;script&gt;</code>需要转义，从<code>&lt;script&gt;</code>输出到html也要转义<br><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413105600683.png" alt></p>
+<h1 id="csrf"><a href="#csrf" class="headerlink" title="csrf"></a>csrf</h1><h2 id="初探"><a href="#初探" class="headerlink" title="初探"></a>初探</h2><p>攻击者在自己的域构造一个页面，利用img标签发送get请求<br>，诱导管理员访问b域执行请求</p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="浏览器的cookie-策略"><a href="#浏览器的cookie-策略" class="headerlink" title="浏览器的cookie 策略"></a>浏览器的cookie 策略</h3><p><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413110333678.png" alt></p>
+<p>session 在内存中，管理tab不会失效，关闭浏览器则失效</p>
+<p>Third-party Cookie 在本地，随设置的失效时间失效</p>
+<p><img src="/old_post/images/atricleImages/白帽子讲web安全笔记/ie，.png" alt="ie，"><br><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190413110539087.png" alt></p>
+<h3 id="P3P头的副作用"><a href="#P3P头的副作用" class="headerlink" title="P3P头的副作用"></a>P3P头的副作用</h3><ul>
+<li>p3p头 用于跨域设置cookie，内嵌的广告页面需要</li>
+<li>问题，设置后ie会不在拦截iframe 等标签的cookie发送</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>flash</li>
+<li>post 请求<ul>
+<li>可能使用request接受，直接get</li>
+<li>利用表达构造，，javascript 自动提交 </li>
+</ul>
+</li>
+<li>csrf 蠕虫</li>
+</ul>
+<h2 id="csrf防御"><a href="#csrf防御" class="headerlink" title="csrf防御"></a>csrf防御</h2><h3 id="初步"><a href="#初步" class="headerlink" title="初步"></a>初步</h3><ul>
+<li>验证码</li>
+<li><p>referer check</p>
+<h3 id="anti-csrf-token"><a href="#anti-csrf-token" class="headerlink" title="anti csrf token"></a>anti csrf token</h3></li>
+<li><p>加上攻击者猜不到的参数</p>
+<ul>
+<li>哈希加盐加密</li>
+<li>新增一个随机参数token<ul>
+<li>表单增加一个</li>
+<li>在cookie或session存储一个</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="token-使用原则"><a href="#token-使用原则" class="headerlink" title="token 使用原则"></a>token 使用原则</h4><ul>
+<li>要足够随机，不能被预测到，真随机数发生器</li>
+<li>消耗掉需要换一个</li>
+<li>如果存在coookie，多页面提交可能会有文件，解决方法同时生成多个</li>
+<li>token 尽量不要放在url中，否则如果被攻击页面包含了攻击者可以指定地址的图片，可能会通过referer 泄露<ul>
+<li>应尽量放在表达中，以post 或ajax提交</li>
+</ul>
+</li>
+<li>被攻击站网站如果存在xss漏洞，token会失效，称之为xsrf 和 csrf 以示区分</li>
+</ul>
+<h1 id="点击劫持"><a href="#点击劫持" class="headerlink" title="点击劫持"></a>点击劫持</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><ul>
+<li>构造一个不可见的iframe 页面，诱导用户在这个界面操作</li>
+</ul>
+<h2 id="常见攻击"><a href="#常见攻击" class="headerlink" title="常见攻击"></a>常见攻击</h2><ul>
+<li>falsh点击劫持</li>
+<li>图片覆盖攻击<ul>
+<li>XISO 攻击</li>
+<li>通过控制图片的style改变图片位置，诱使用户点击</li>
+</ul>
+</li>
+<li>拖拽劫持与数据窃取<ul>
+<li>浏览器开始支持Drag&amp;Drop API ，用户可以从一个窗口拖到另一个窗口，不受同源策略限制，</li>
+<li>诱使用户从不可间的iframe 拖拽数据到攻击者可以控制的另一个页面</li>
+</ul>
+</li>
+<li>触屏劫持<ul>
+<li>通过一个不可见的iframe 劫持用户的触屏操作<h2 id="防御-clickJacking"><a href="#防御-clickJacking" class="headerlink" title="防御 clickJacking"></a>防御 clickJacking</h2></li>
+</ul>
+</li>
+</ul>
+<h3 id="禁止frame"><a href="#禁止frame" class="headerlink" title="禁止frame"></a>禁止frame</h3><ul>
+<li>frame busting 利用javascript 禁止frame嵌套<ul>
+<li>可能被多层嵌套绕过</li>
+<li>html5 的dandbox 属性，ie iframe的security 属性可以禁止iframe 的javaScript 脚本执行，使frame busting 失效</li>
+</ul>
+</li>
+</ul>
+<h3 id="X-Frame-Options"><a href="#X-Frame-Options" class="headerlink" title="X-Frame-Options"></a>X-Frame-Options</h3><ul>
+<li>值为DENY 时，浏览器会拒绝加载frame页面</li>
+<li>值为SAMEORIFIN ，只允许同源</li>
+<li>ALLOW-FROM 则可以定义允许加载的地址</li>
+</ul>
+<p>firefos 的csp 和noscript扩展也能有效的防御Clickjacking</p>
+<h1 id="html5-安全"><a href="#html5-安全" class="headerlink" title="html5 安全"></a>html5 安全</h1><h2 id="新的标签"><a href="#新的标签" class="headerlink" title="新的标签"></a>新的标签</h2><ul>
+<li>xss绕过问题</li>
+<li>ifame 的sandbox属性<ul>
+<li><code>&lt;iframe&gt;</code>会被看作一个独立的源，可以利用sandbox实现更精准的控制</li>
+</ul>
+</li>
+<li><code>&lt;a&gt;和&lt;area&gt;</code> 定义了一个新的rel(Link typees) ： noreferrer , 加上此标签则不会发生refererm</li>
+<li>cancas<ul>
+<li>不同于加载一个图片，而是画布</li>
+<li>甚至可以利用它破解验证码</li>
+</ul>
+</li>
+</ul>
+<h2 id="其他安全问题"><a href="#其他安全问题" class="headerlink" title="其他安全问题"></a>其他安全问题</h2><ul>
+<li>cross-origin resource sharing <ul>
+<li>a 跨域访问b，a的请求带origin 参数，b 中access-control-allow-origin 会写允不允许跨域</li>
+</ul>
+</li>
+<li>postMessage <ul>
+<li>允许像window（当前，弹出，iframes等） 发送消息</li>
+</ul>
+</li>
+<li>web storage<ul>
+<li>session storage 浏览器关闭即消失</li>
+<li>local storage</li>
+</ul>
+</li>
+</ul>
+<h1 id="sql-注入攻击"><a href="#sql-注入攻击" class="headerlink" title="sql 注入攻击"></a>sql 注入攻击</h1><h2 id="初探-1"><a href="#初探-1" class="headerlink" title="初探"></a>初探</h2><ul>
+<li>普通攻击</li>
+<li>报错注入</li>
+<li>盲注</li>
+</ul>
+<h2 id="攻击技巧"><a href="#攻击技巧" class="headerlink" title="攻击技巧"></a>攻击技巧</h2><ul>
+<li>获取数据</li>
+<li>命令执行<ul>
+<li>自定义函数</li>
+<li>udf</li>
+</ul>
+</li>
+<li>储存过程的攻击<ul>
+<li>xp_cmdshell</li>
+<li>存储过程本身的注入漏洞</li>
+</ul>
+</li>
+<li>编码问题<ul>
+<li>宽字节注入，统一字符集</li>
+</ul>
+</li>
+<li><p>sql column truncation</p>
+<ul>
+<li>sql约束攻击</li>
+<li>超长值可能会截断，导致越权admin+50空格+a<br>-<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2></li>
+</ul>
+</li>
+<li><p>初步</p>
+<ul>
+<li>过滤，可能被绕过</li>
+</ul>
+</li>
+<li>使用预编译语句</li>
+<li>使用存储过程</li>
+<li>检查数据类型</li>
+<li>使用安全函数</li>
+</ul>
+<h2 id="其他注入攻击"><a href="#其他注入攻击" class="headerlink" title="其他注入攻击"></a>其他注入攻击</h2><ul>
+<li>xml注入<ul>
+<li>同html注入，因为没有过滤，直接拼接字符串</li>
+<li>XML外部实体注入（XXE）<ul>
+<li>如果xml文档被加载，则可能存在这个漏洞，可以任意读文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>代码注入<ul>
+<li>eval() 拼接</li>
+</ul>
+</li>
+<li>CRLF 注入<ul>
+<li>CR 表示\r LF表示\n ，其十六进制编码为0x0d，0x0a，</li>
+<li>CRLF 常用于不同语义的换行符，通过注入CRLF字符则可能改变原理的语义</li>
+<li>通过CRLF可能构造一条新的日志</li>
+<li>注入HTTP头<ul>
+<li>用户提交的数据出现在cookie等地方，可以构造两次换行，结束http头，然后在html中插入xss</li>
+<li>只换行一次，可以构造返回头，<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416113659194.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416113705757.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h1><h2 id="初探-2"><a href="#初探-2" class="headerlink" title="初探"></a>初探</h2><ul>
+<li>上传检查<ul>
+<li>黑名单绕过</li>
+<li>%00截断</li>
+</ul>
+</li>
+<li>文件头检查<ul>
+<li>图片中插入php代码</li>
+</ul>
+</li>
+<li>apache 1.x，2.x文件解析问题<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114249817.png" alt></li>
+</ul>
+</li>
+<li><p>iis6文件解析问题</p>
+<ul>
+<li>遇到；会截断<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114331744.png" alt></li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114345252.png" alt><br><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416114738380.png" alt></li>
+</ul>
+</li>
+<li><p>php CGI 路径解析问题</p>
+<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115028705.png" alt></li>
+<li>php cgi.fix_pathinfo选项默认开启<ul>
+<li>映射URL 两个环境变量，PATH_INFO,SCRIPT_FILENAME ,映射url时，将递归查询路径确定文件，最后一个不存在则向前递归，<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115340165.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>利用文件上传钓鱼</p>
+<ul>
+<li>302跳转url路径会改变</li>
+<li>上传图片，加入html代码,<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115705865.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416115646065.png" alt></li>
+</ul>
+</li>
+</ul>
+<h2 id="设计安全的文件上传功能"><a href="#设计安全的文件上传功能" class="headerlink" title="设计安全的文件上传功能"></a>设计安全的文件上传功能</h2><ul>
+<li>上传目录设置为不可执行</li>
+<li>判断文件类型<ul>
+<li>白名单</li>
+<li>对图片使用压缩函数，破坏可能包含的html代码</li>
+</ul>
+</li>
+<li>利用随机数改写文件名和路径</li>
+<li>单独设置文件服务器域名，利用同源策略，使crossdomain.xml，xss利用失效</li>
+</ul>
+<h1 id="认证与会话管理"><a href="#认证与会话管理" class="headerlink" title="认证与会话管理"></a>认证与会话管理</h1><h2 id="初探-3"><a href="#初探-3" class="headerlink" title="初探"></a>初探</h2><ul>
+<li>认证解决的 who am I 的问题</li>
+<li>认证实际上是一个验证凭证的过程，<ul>
+<li>单因素验证</li>
+<li>多因素验证</li>
+</ul>
+</li>
+<li>密码<ul>
+<li>复杂度，不要使用用户公开数据，或个人隐私相关数据，</li>
+<li>服务器存储<ul>
+<li>不可逆加密算法，或单向散列函数算法</li>
+<li>MD5，彩虹表破解，，加盐</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>多因素认证</li>
+</ul>
+<h2 id="session-与认证"><a href="#session-与认证" class="headerlink" title="session 与认证"></a>session 与认证</h2><ul>
+<li>sessionID 储存在cookie中，标识用户信息</li>
+<li>一旦在生命周期被窃取，相当于账户失窃<ul>
+<li>cookie 可能被窃取</li>
+</ul>
+</li>
+<li>早期手机操作系统不支持cookie，sessionid 保存在url中，有很多问题<ul>
+<li>外部图片的引用，referer 头泄露sid</li>
+</ul>
+</li>
+<li>session fixation 攻击<ul>
+<li>a把网页给b，b登录后session 为改变，则a也可能会登录b的账户</li>
+<li>解决登陆后重写sessionid</li>
+</ul>
+</li>
+<li>session 保持攻击<ul>
+<li>session有生命周期<ul>
+<li>一直活动时session保持下去</li>
+</ul>
+</li>
+<li>网站访问量过大，sesson 可能交给浏览器维护，服务器只解密cookie，很多应用利用cookie 的expire标签控制session 失效时间<ul>
+<li>利用javascript 在xss攻击后将cookie 设置为永不过期</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416122938612.png" alt></li>
+</ul>
+</li>
+<li>对抗<ul>
+<li>一段时间后，强制销毁session</li>
+<li>当用户ip，useragent 改变后，强制销毁</li>
+<li>用户可以同时拥有几个session</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单点登录（sso）<ul>
+<li>openID</li>
+</ul>
+</li>
+</ul>
+<h1 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h1><h2 id="初探-4"><a href="#初探-4" class="headerlink" title="初探"></a>初探</h2><ul>
+<li>What Can I Do?</li>
+</ul>
+<p><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416123317666.png" alt></p>
+<pre><code>- 网络，利用路由设备或防火墙基于ip的访问控制
+- 操作系统
+- web应用
+    - 基于url的访问控制
+        - 授权用户可以访问的url![](/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416123655354.png)
+        - 
+    - 基于方法的访问控制
+    - 基于数据的访问控制
+</code></pre><ul>
+<li>垂直权限管理<ul>
+<li>基于角色的访问控制RBAC<ul>
+<li>用户属于不同的角色，不同的角色有不同的权限<br>-可能的问题，水平越权</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>水平权限管理<ul>
+<li>基于数据的访问控制</li>
+<li>使用用户组的概念，</li>
+<li>实现一个规则引擎，<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416053926740.png" alt></li>
+</ul>
+</li>
+<li>OAuth<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416054911803.png" alt>议</li>
+</ul>
+</li>
+</ul>
+<h1 id="加密算法与随机数"><a href="#加密算法与随机数" class="headerlink" title="加密算法与随机数"></a>加密算法与随机数</h1><h2 id="加密算法初探"><a href="#加密算法初探" class="headerlink" title="加密算法初探"></a>加密算法初探</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
+<li>分组加密</li>
+<li>流密码加密<br><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416061604134.png" alt></li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>stream cipher attack<ul>
+<li>使用同一个密钥多次加密</li>
+<li>reused key attack<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416061735302.png" alt></li>
+<li>四个数据只要知道3个，就可以推到另一个，密钥C失效</li>
+<li>增加一个初始化向量IV，使每次加密密钥不同。IV可以随意传播</li>
+<li>bit-flipping attack<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416063243060.png" alt></li>
+<li>当攻击者获取了普通用户a，acookie就可能伪造管理员的cookie</li>
+<li>解决方法<ul>
+<li>附带mac，利用哈希函数加密，hmac，解密密文和mac比较，防止密文被篡改</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416065353817.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>弱随机IV 问题<ul>
+<li>但若IV不够随机，暴力破解，可以出现相同的IV，仍然可以实施攻击</li>
+</ul>
+</li>
+<li>wep 的破解<ul>
+<li>IV 重复的问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ECB 模式的缺陷<ul>
+<li>分组加密的通用加密模式ECB，<ul>
+<li>分组互不关联，改变分组的密文顺序，明文顺序同样改变<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416065917158.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>padding oracle attack<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416070256759.png" alt></li>
+<li>看不懂，待填坑</li>
+</ul>
+</li>
+</ul>
+<h2 id="密钥管理"><a href="#密钥管理" class="headerlink" title="密钥管理"></a>密钥管理</h2><ul>
+<li>密码系统的安全性应该依赖与密钥的复杂性，而不应该依赖算法的报名性</li>
+<li>密钥管理的常见错误，就是将密钥硬编码在代码里<ul>
+<li>可能因为代码的广泛传播而泄露</li>
+<li>软件开发团队都可能看到代码</li>
+<li>解决<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416070644168.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对于web应用，通常将密钥（包括密码）保存在配置文件或者数据库里</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416070803780.png" alt></li>
+</ul>
+<h2 id="伪随机数问题"><a href="#伪随机数问题" class="headerlink" title="伪随机数问题"></a>伪随机数问题</h2><h3 id="初探-5"><a href="#初探-5" class="headerlink" title="初探"></a>初探</h3><ul>
+<li>随机因子不够大，被遍历</li>
+<li>时间随机的问题<ul>
+<li>时间可能被获取</li>
+</ul>
+</li>
+<li>伪随机数算法种子破解<ul>
+<li>系统自带的播种，多次访问结果相同</li>
+<li>使用时间播种，可能被猜解时间</li>
+<li>已知第一个随机数的值，可能被猜解到种子</li>
+<li>通过发送 Keeo-Alive HTTP 头，迫使服务器使用同样进程响应请求，随机数只在开始播种一次<ul>
+<li>web应用，很多地方都可以取得随机数，从而提供猜解的可能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用安全的随机数</li>
+<li><p>多个随机数组合<br>   <img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416090615912.png" alt>   - </p>
+</li>
+<li><p><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416090744533.png" alt></p>
+</li>
+<li></li>
+</ul>
+<h1 id="web-框架安全"><a href="#web-框架安全" class="headerlink" title="web 框架安全"></a>web 框架安全</h1><h2 id="MVC-框架安全"><a href="#MVC-框架安全" class="headerlink" title="MVC 框架安全"></a>MVC 框架安全</h2><ul>
+<li>模板引擎与xss防御<ul>
+<li>只进行html转义，为区分不同环境</li>
+<li>慎重对待安全问题，不可盲从官方执导文档</li>
+</ul>
+</li>
+<li>web框架与CSRF防御<ul>
+<li>对读和写操作区分，csrf一般只针对写操作</li>
+<li>利用框架对form表单添加token</li>
+</ul>
+</li>
+<li>HTTP Headers 管理<ul>
+<li>在web框架中，可以对HTTP头进行全局化处理，一些基于HTTP头的方案可以很好的实施<ul>
+<li>对抗CRLF，只要在所有的HTTP头的value 中，编码、\r\n即可</li>
+<li>针对302跳转，在统一的跳转函数实现白名单，或限制Locationg值</li>
+<li>很多安全相关的headers ，可以统一在web框架中配置</li>
+<li>框架提供统一的设置cookie函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据持久层与sql注入<ul>
+<li>ORM框架</li>
+</ul>
+</li>
+<li>其他<ul>
+<li>文件上传</li>
+<li>spring MVC 自带的安全功能</li>
+<li>日志的记录</li>
+<li>与时俱进</li>
+</ul>
+</li>
+</ul>
+<h2 id="web框架自身安全"><a href="#web框架自身安全" class="headerlink" title="web框架自身安全"></a>web框架自身安全</h2><p>开发框架可能不及时更新，引发的后果可能很严重</p>
+<ul>
+<li>struts 2命令执行漏洞</li>
+<li>spring MVC 3.0.0-3.0.2 命令执行漏洞</li>
+<li>django 0.95 命令执行漏洞</li>
+</ul>
+<h1 id="应用层拒绝服务攻击"><a href="#应用层拒绝服务攻击" class="headerlink" title="应用层拒绝服务攻击"></a>应用层拒绝服务攻击</h1><h2 id="初步-1"><a href="#初步-1" class="headerlink" title="初步"></a>初步</h2><ul>
+<li>DDOS 简介<ul>
+<li>SYN flood<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416093737635.png" alt></li>
+</ul>
+</li>
+<li>UDP flood</li>
+<li>ICMP flood</li>
+</ul>
+</li>
+<li>应用层ddos<ul>
+<li>cc 攻击<ul>
+<li>对消耗资源大的页面不断发起正常请求，消耗服务器资源</li>
+</ul>
+</li>
+<li>入侵了一个浏览很大的网站后，引流攻击</li>
+<li>防御<ul>
+<li>限制请求频率<ul>
+<li>问题<ul>
+<li>代理ip和cookie改变</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>应用代码做好性能优化</li>
+<li>网络架构做好优化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>验证码<ul>
+<li>可能被识别</li>
+<li>出现过的问题<ul>
+<li>验证码消耗掉后，sessionID，未更新，导致原sessionID 可以一直重复提交同一个验证码</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416094943681.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>防御应用层的DDOS<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416095114287.png" alt></li>
+<li>调整apache 的参数</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416095334040.png" alt></li>
+</ul>
+</li>
+<li>资源耗尽攻击<ul>
+<li>slowloris 攻击<ul>
+<li>构建一个为结束的http请求，保存连接，构建多个这样的连接</li>
+</ul>
+</li>
+<li>HTTP POST DOS<ul>
+<li>发POST 包时，指定一个很大的content-length值，然后以很低 的速度发包，构建多个这样的连接</li>
+</ul>
+</li>
+<li>server limit dos<ul>
+<li>一般web server 对http头的大小有限制</li>
+<li>攻击者利用xss攻击，，恶意像客户端写一个超长cookie，则客户端无法访问cookie所在域的任何页面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>reDOS<ul>
+<li>当正则表达式写的不好时，可能被恶意利用，消耗大量资源，从而造成dos,<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416112638728.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190416112718856.png" alt></li>
+</ul>
+</li>
+</ul>
+<h1 id="php-安全"><a href="#php-安全" class="headerlink" title="php 安全"></a>php 安全</h1><ul>
+<li>文件包含漏洞<ul>
+<li>include等函数通过动态变量引入需要的文件</li>
+<li>用户可以控制该动态变量</li>
+</ul>
+</li>
+<li>本地文件包含<pre><code>- 截断后续字符串
+    - 00截断
+    - 操作系统对目录的最大长度限制
+        - window 256
+        - linux 4096
+        - ./././ 或/// 或 ../1/abc/../1/abc
+</code></pre><ul>
+<li>目录遍历 ../../ 返回到上层目录中<ul>
+<li>可以通过不同编码方式来绕过服务端的逻辑<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190417012242664.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解决<ul>
+<li>open_basedir 限制php能打开的文件在某个目录<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190417013004916.png" alt></li>
+</ul>
+</li>
+<li>使用枚举<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190417013051890.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>远程文件包含</p>
+<ul>
+<li>需要allow_url_include 为ON，加载远程文件</li>
+</ul>
+</li>
+<li><p>利用技巧</p>
+<ul>
+<li>包含用户上传的文件</li>
+<li>利用data://,php:// 伪协议<ul>
+<li>需要allow_url_include 为on</li>
+</ul>
+</li>
+<li>包含session<ul>
+<li>需要用户可以控制部分session 文件内容</li>
+<li>php默认session 在/tmp 文件</li>
+</ul>
+</li>
+<li>包含日志文件<ul>
+<li>access_log 记录请求信息</li>
+<li>error_log 记录出错信息<ul>
+<li>问题<ul>
+<li>日志数据量可能很大</li>
+<li>凌晨包含</li>
+</ul>
+</li>
+<li>常见攻击<ul>
+<li>apache</li>
+<li>读取httpd 的配置文件 httpd.conf,找到日志目录</li>
+<li>错误回显泄露 web目录位置</li>
+<li>猜解web目录位置</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>包含/proc/self/environ 文件<ul>
+<li>web运行的环境变量，其中很大都是用户可以控制的，</li>
+<li>常见做法在user-agent 注入php代码</li>
+<li></li>
+<li></li>
+</ul>
+</li>
+<li>包含上传的临时文件（RFC1867协议）<ul>
+<li>php为上传的文件创建临时文件，目录在php.ini upload_tmp_dir 中定义，默认为空，此时linux 使用/tmp 目录，windows使用c:\windows\temp 目录</li>
+<li>随机函数不够安全，暴力猜解成为可能</li>
+</ul>
+</li>
+<li>包含其他应用创建的文件，比如数据库文件，缓存文件，应用日志等</li>
+</ul>
+</li>
+</ul>
+<h2 id="变量覆盖漏洞"><a href="#变量覆盖漏洞" class="headerlink" title="变量覆盖漏洞"></a>变量覆盖漏洞</h2><ul>
+<li><p>全局变量覆盖</p>
+<ul>
+<li>register_glabals <ul>
+<li>php 4.2.0 之后默认有ON改为OFF</li>
+<li>为on，变量可能来自不同地方，表单，cookie等，可能导致变量覆盖<ul>
+<li>通过代码销毁<img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418102732598.png" alt><ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418102946431.png" alt></li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418103005365.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>extract() 变量覆盖<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418103118891.png" alt></li>
+<li>值为EXTR_OVERWRITE时，变量导入时，会覆盖已有变量，缺省为此配置，第二个参数表示不覆盖</li>
+</ul>
+</li>
+<li>$$key 的可能变量覆盖</li>
+<li>import_request_variables 变量覆盖<ul>
+<li>将GET,POST,COOKIE的变量导入全局，只需要简单的指定类型，不指定默认覆盖全局变量</li>
+</ul>
+</li>
+<li>parse_str() 变量覆盖，mb_parse_str()<ul>
+<li>解析url，如果指定第二个参数则存入该参数，否则导入全局</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码执行漏洞</p>
+<ul>
+<li>危险函数代码执行<ul>
+<li>文件包含漏洞</li>
+<li>危险函数eval(),popen(),system(),passthru(),exec()</li>
+<li>应用写入服务器的文件内容和文件类型</li>
+</ul>
+</li>
+<li>其他执行代码的方式<ul>
+<li>直接执行代码的函数</li>
+<li>文件包含</li>
+<li>本地文件写入</li>
+<li>preg_replace 代码执行<ul>
+<li>第一个参数如果存在/e 修饰符，则允许第一个或者第二个参数代码执行</li>
+</ul>
+</li>
+<li>动态函数执行<ul>
+<li>用户自定义的函数可以导致代码执行</li>
+</ul>
+</li>
+<li>curly syntax<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418110401084.png" alt></li>
+</ul>
+</li>
+<li>回调函数执行代码<ul>
+<li>如果回调函数可控</li>
+</ul>
+</li>
+<li>unserialize() 导致代码执行<ul>
+<li>变量反序化</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418110644650.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>定制安全的php环境<ul>
+<li>php.ini<ul>
+<li>register_globals</li>
+<li>open_basedir</li>
+<li>allow_url_fopen</li>
+<li>allow_url_include</li>
+<li>display_errors</li>
+<li>log_erroes</li>
+<li>magic_quotes_gpc</li>
+<li>cgi.fix_pathinfo<ul>
+<li>关闭此选项避免，CGI，文件解析问题</li>
+</ul>
+</li>
+<li>session.cookie_httponly</li>
+<li>session.cookie_secure</li>
+<li>safe_mode<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418112011049.png" alt></li>
+<li>加载了一些非官方的php 扩展，扩展自带函数则可能绕过safe_mode</li>
+<li>此模式php6 被取消</li>
+</ul>
+</li>
+<li>disble_functions 在php 中禁用函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="web-server-配置安全"><a href="#web-server-配置安全" class="headerlink" title="web server 配置安全"></a>web server 配置安全</h1><ul>
+<li>apache 安全<ul>
+<li>非官方module </li>
+<li>为apache 单独建立一个user/group</li>
+<li>配置参数，对抗DDOs</li>
+<li>保护好apache log</li>
+</ul>
+</li>
+<li>nginx<ul>
+<li>自身服务器安全</li>
+</ul>
+</li>
+<li>JBoss 远程命令执行<ul>
+<li>默认安装会带一个管理后台，通过8080端口，访问/jmx-console 能够进入</li>
+<li>可以远程加载war 包，导致命令执行</li>
+</ul>
+</li>
+<li>tomcat 远程命令执行<ul>
+<li>默认8080端口又后台</li>
+</ul>
+</li>
+<li>HTTP Parameter Pollution<ul>
+<li>通过GET POST 发送两个相同的参数，服务器如何选择</li>
+<li>有些只取第一个</li>
+<li>有些如.net 变成 a = test,test1</li>
+<li>绕过一些服务器的逻辑判断</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418065724831.png" alt><ul>
+<li>HPP攻击</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="互联网公司安全运营"><a href="#互联网公司安全运营" class="headerlink" title="互联网公司安全运营"></a>互联网公司安全运营</h1><h2 id="互联网业务安全"><a href="#互联网业务安全" class="headerlink" title="互联网业务安全"></a>互联网业务安全</h2><ul>
+<li>产品需要什么样的安全<ul>
+<li>安全方案的设计避免业务的冲突</li>
+<li>互联网产品对安全的需求<ul>
+<li>具备了安全性，产品才是完整的</li>
+<li>安全做好了，产品才能最终成熟</li>
+</ul>
+</li>
+<li>什么是好的安全方案<ul>
+<li>有效的解决问题</li>
+<li>良好的用户体验</li>
+<li>优秀的性能<ul>
+<li>认证<ul>
+<li>双因素认证用户体验问题</li>
+<li>复杂密码安全吗？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418070913650.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>业务逻辑安全<pre><code>- 两套账号体系，绑定关系，只改一个
+- 登录失败锁定账号一小时，竞拍网站，恶意登录，锁定出高价用户的账号
+- 信息审核后发布，允许修改，修改后未审核
+</code></pre><ul>
+<li>密码取回流程<ul>
+<li>改密码<ul>
+<li>进行敏感操作之前再次认证用户身份</li>
+</ul>
+</li>
+<li>密码取回流程<ul>
+<li>三种方法<ul>
+<li>安全问题，安全邮箱，手机短信验证码</li>
+</ul>
+</li>
+<li>认证信息可能之前被修改</li>
+<li>给用户多种认证选择</li>
+<li>三种都不可靠时，利用用户在网站留下的私有信息，类似qq的申述</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>账号如何被盗的<ul>
+<li>账号被盗的途径<ul>
+<li>登录过程无HTTPS</li>
+<li>用户电脑中木马，记录键盘</li>
+<li>钓鱼网站</li>
+<li>登录入口别暴力破解</li>
+<li>取回流程的逻辑漏洞</li>
+<li>xss漏洞，被间接窃取</li>
+<li>sql注入漏洞</li>
+<li>问题<ul>
+<li>暴力破解<ul>
+<li>常用密码</li>
+<li>网络嗅探</li>
+<li>数据库明文密码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分析账号被盗的原因<ul>
+<li>事先考虑问题的可能性，有针对性的向客户提问题，大胆假设，小心求证</li>
+<li>从日志中寻找证据</li>
+<li>打入敌人内部</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>互联网的垃圾<ul>
+<li>垃圾的危害<ul>
+<li>垃圾注册<ul>
+<li>新用户奖励机制</li>
+<li>发广告和推广信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>垃圾的处理<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418074015686.png" alt></li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418074035611.png" alt></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>网络钓鱼</p>
+<ul>
+<li>简介<ul>
+<li>仿冒网站</li>
+<li>欺骗性域名</li>
+<li>传播途径</li>
+</ul>
+</li>
+<li>邮件钓鱼<ul>
+<li>SMTP协议可以由用户伪造发件人邮箱</li>
+<li>识别发件人的安全技术，基于域名策略<ul>
+<li>SPF技术，</li>
+<li>Yahoo 的DomKeys 使用公私钥</li>
+<li>微软的Sender ID技术 基于SPF，ip策略</li>
+<li>SPF 基于ip难以维护</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>钓鱼网站的防控<ul>
+<li>控制钓鱼网站传播的途径<ul>
+<li>多方合作</li>
+<li>浏览器</li>
+</ul>
+</li>
+<li>直接打击</li>
+<li>用户教育</li>
+<li>自动化识别<ul>
+<li>url，域名 0 l，源码的相似性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网购流程的钓鱼<ul>
+<li>网购流程中每个平台都有一套自己的账户体系，没有对应关系，不知道谁完成了订单</li>
+<li>账户信息难以对应</li>
+<li>使用客户端ip做完统一信息，比较经济</li>
+</ul>
+</li>
+<li>用户隐私保护<ul>
+<li>互联网用户隐私挑战<ul>
+<li>精准的广告投放<ul>
+<li>用户在网站填写的个人信息</li>
+<li>搜索记录</li>
+<li>ip地址对应的物理地址</li>
+</ul>
+</li>
+<li>如何保护用户隐私<ul>
+<li>用户因该有知情权和选择权</li>
+<li>网站应该妥善保管，不用于指定范围的其他用途</li>
+</ul>
+</li>
+<li>Do-Not_Track<ul>
+<li>http增加一个header 头，告诉网站用户不想被追踪</li>
+<li>输入法云端分析需求，职业</li>
+<li>iphone，安卓跟踪位置<h2 id="安全开发流程（SDL）"><a href="#安全开发流程（SDL）" class="headerlink" title="安全开发流程（SDL）"></a>安全开发流程（SDL）</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>简介</p>
+<ul>
+<li>安全开发生命周期</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418082213768.png" alt></li>
+</ul>
+</li>
+<li>敏捷SDL<ul>
+<li>瀑布法开发<ul>
+<li>微软的SDL不适合敏捷开发</li>
+<li>敏捷SDL</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SDL 实战经验<ul>
+<li>与项目经理进行充分的沟通，派出足够的时间</li>
+<li>规范立项流程，确保所有项目都通知安全团队</li>
+<li>树立安全部门的权威，项目必须由安全部门审核</li>
+<li>将技术方案写入开发，测试的工作手册中</li>
+<li>给工程师培训安全方案</li>
+<li>记录所有安全的bug鼓励程序员写安全代码</li>
+</ul>
+</li>
+<li>需求分析与设计阶段<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083323876.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083333644.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083352732.png" alt><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418083406237.png" alt></li>
+</ul>
+</li>
+<li>开发阶段<ul>
+<li>提供安全的函数<ul>
+<li>ESAPI</li>
+<li>将安全方案写入开发规范中</li>
+</ul>
+</li>
+<li>代码安全审计工具<ul>
+<li>找敏感函数，回溯</li>
+<li>找用户可能的输入口，看传递情况</li>
+<li>对于甲方公司，</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="安全运营"><a href="#安全运营" class="headerlink" title="安全运营"></a>安全运营</h2><ul>
+<li><p>把安全运营起来</p>
+<ul>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418084018486.png" alt></li>
+<li>安全是一个持续的过程</li>
+<li><img src="/old_post/images/atricleImages/images/atricleImages/白帽子讲web安全笔记/20190418084104980.png" alt></li>
+</ul>
+</li>
+<li><p>漏洞修补流程</p>
+</li>
+<li>安全监控<ul>
+<li>捕捉异常流程</li>
+</ul>
+</li>
+<li>入侵检测<ul>
+<li>IDS,IPS,DDOS监控设备,WAF,</li>
+<li>modsecurity</li>
+<li>phpids</li>
+</ul>
+</li>
+<li>紧急响应处理流程<ul>
+<li>邮件报警</li>
+<li>IM报警</li>
+<li>短信报警</li>
+<li>紧急响应小组<ul>
+<li>保护安全事件的现场</li>
+<li>最快的速度处理问题</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web安全/" rel="tag"># web安全</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/白帽子讲web安全/" rel="tag"># 白帽子讲web安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/old_post/sql注入攻击与防御笔记.html" rel="next" title="sql注入攻击与防御笔记">
+                <i class="fa fa-chevron-left"></i> sql注入攻击与防御笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/old_post/网安程序设计比赛文档.html" rel="prev" title="网安程序设计比赛文档">
+                网安程序设计比赛文档 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzgwMC8yMDMzOQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wendell</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tongweigii@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安全世界观"><span class="nav-number">1.</span> <span class="nav-text">安全世界观</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#web安全简史"><span class="nav-number">1.1.</span> <span class="nav-text">web安全简史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web安全的兴起"><span class="nav-number">1.1.1.</span> <span class="nav-text">web安全的兴起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全的本质"><span class="nav-number">1.1.2.</span> <span class="nav-text">安全的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全三要素"><span class="nav-number">1.1.3.</span> <span class="nav-text">安全三要素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#白帽子兵法"><span class="nav-number">1.2.</span> <span class="nav-text">白帽子兵法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Secure-By-Default-原则"><span class="nav-number">1.2.1.</span> <span class="nav-text">Secure By Default 原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录（谁来为漏洞买单）"><span class="nav-number">1.3.</span> <span class="nav-text">附录（谁来为漏洞买单）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器安全"><span class="nav-number">2.</span> <span class="nav-text">浏览器安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同源策略"><span class="nav-number">2.1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器沙箱"><span class="nav-number">2.2.</span> <span class="nav-text">浏览器沙箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恶意网站拦截"><span class="nav-number">2.3.</span> <span class="nav-text">恶意网站拦截</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高速发展的浏览器安全"><span class="nav-number">2.4.</span> <span class="nav-text">高速发展的浏览器安全</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xss"><span class="nav-number">3.</span> <span class="nav-text">xss</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本介绍"><span class="nav-number">3.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击进阶"><span class="nav-number">3.2.</span> <span class="nav-text">攻击进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#攻击平台"><span class="nav-number">3.2.1.</span> <span class="nav-text">攻击平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xss-Worm"><span class="nav-number">3.2.2.</span> <span class="nav-text">xss Worm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试javaScript"><span class="nav-number">3.2.3.</span> <span class="nav-text">调试javaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xss构造技巧"><span class="nav-number">3.2.4.</span> <span class="nav-text">xss构造技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用字符编码"><span class="nav-number">3.2.4.1.</span> <span class="nav-text">利用字符编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绕过长度限制"><span class="nav-number">3.2.4.2.</span> <span class="nav-text">绕过长度限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#anehta-的回旋镖"><span class="nav-number">3.2.4.3.</span> <span class="nav-text">anehta 的回旋镖</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flash-xss"><span class="nav-number">3.2.5.</span> <span class="nav-text">flash xss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript-开发框架"><span class="nav-number">3.2.6.</span> <span class="nav-text">javascript 开发框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xss-的防御"><span class="nav-number">3.3.</span> <span class="nav-text">xss 的防御</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#httponly"><span class="nav-number">3.3.1.</span> <span class="nav-text">httponly</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入检查"><span class="nav-number">3.3.2.</span> <span class="nav-text">输入检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出检查"><span class="nav-number">3.3.3.</span> <span class="nav-text">输出检查</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安全编码函数"><span class="nav-number">3.3.3.1.</span> <span class="nav-text">安全编码函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#只需要一种编码吗？"><span class="nav-number">3.3.3.2.</span> <span class="nav-text">只需要一种编码吗？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正确的防御xss"><span class="nav-number">3.3.4.</span> <span class="nav-text">正确的防御xss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#富文本处理"><span class="nav-number">3.3.5.</span> <span class="nav-text">富文本处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防御DOM-Based-XSS"><span class="nav-number">3.3.6.</span> <span class="nav-text">防御DOM Based XSS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#csrf"><span class="nav-number">4.</span> <span class="nav-text">csrf</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初探"><span class="nav-number">4.1.</span> <span class="nav-text">初探</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶"><span class="nav-number">4.2.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的cookie-策略"><span class="nav-number">4.2.1.</span> <span class="nav-text">浏览器的cookie 策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#P3P头的副作用"><span class="nav-number">4.2.2.</span> <span class="nav-text">P3P头的副作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">4.2.3.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#csrf防御"><span class="nav-number">4.3.</span> <span class="nav-text">csrf防御</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初步"><span class="nav-number">4.3.1.</span> <span class="nav-text">初步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#anti-csrf-token"><span class="nav-number">4.3.2.</span> <span class="nav-text">anti csrf token</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#token-使用原则"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">token 使用原则</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击劫持"><span class="nav-number">5.</span> <span class="nav-text">点击劫持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#是什么"><span class="nav-number">5.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见攻击"><span class="nav-number">5.2.</span> <span class="nav-text">常见攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御-clickJacking"><span class="nav-number">5.3.</span> <span class="nav-text">防御 clickJacking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止frame"><span class="nav-number">5.3.1.</span> <span class="nav-text">禁止frame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#X-Frame-Options"><span class="nav-number">5.3.2.</span> <span class="nav-text">X-Frame-Options</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html5-安全"><span class="nav-number">6.</span> <span class="nav-text">html5 安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新的标签"><span class="nav-number">6.1.</span> <span class="nav-text">新的标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他安全问题"><span class="nav-number">6.2.</span> <span class="nav-text">其他安全问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql-注入攻击"><span class="nav-number">7.</span> <span class="nav-text">sql 注入攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初探-1"><span class="nav-number">7.1.</span> <span class="nav-text">初探</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#攻击技巧"><span class="nav-number">7.2.</span> <span class="nav-text">攻击技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防御"><span class="nav-number">7.3.</span> <span class="nav-text">防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他注入攻击"><span class="nav-number">7.4.</span> <span class="nav-text">其他注入攻击</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件上传漏洞"><span class="nav-number">8.</span> <span class="nav-text">文件上传漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初探-2"><span class="nav-number">8.1.</span> <span class="nav-text">初探</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计安全的文件上传功能"><span class="nav-number">8.2.</span> <span class="nav-text">设计安全的文件上传功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#认证与会话管理"><span class="nav-number">9.</span> <span class="nav-text">认证与会话管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初探-3"><span class="nav-number">9.1.</span> <span class="nav-text">初探</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-与认证"><span class="nav-number">9.2.</span> <span class="nav-text">session 与认证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问控制"><span class="nav-number">10.</span> <span class="nav-text">访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初探-4"><span class="nav-number">10.1.</span> <span class="nav-text">初探</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加密算法与随机数"><span class="nav-number">11.</span> <span class="nav-text">加密算法与随机数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加密算法初探"><span class="nav-number">11.1.</span> <span class="nav-text">加密算法初探</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">11.1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">11.1.2.</span> <span class="nav-text">问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密钥管理"><span class="nav-number">11.2.</span> <span class="nav-text">密钥管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪随机数问题"><span class="nav-number">11.3.</span> <span class="nav-text">伪随机数问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初探-5"><span class="nav-number">11.3.1.</span> <span class="nav-text">初探</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web-框架安全"><span class="nav-number">12.</span> <span class="nav-text">web 框架安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC-框架安全"><span class="nav-number">12.1.</span> <span class="nav-text">MVC 框架安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web框架自身安全"><span class="nav-number">12.2.</span> <span class="nav-text">web框架自身安全</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层拒绝服务攻击"><span class="nav-number">13.</span> <span class="nav-text">应用层拒绝服务攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初步-1"><span class="nav-number">13.1.</span> <span class="nav-text">初步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#php-安全"><span class="nav-number">14.</span> <span class="nav-text">php 安全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量覆盖漏洞"><span class="nav-number">14.1.</span> <span class="nav-text">变量覆盖漏洞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web-server-配置安全"><span class="nav-number">15.</span> <span class="nav-text">web server 配置安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#互联网公司安全运营"><span class="nav-number">16.</span> <span class="nav-text">互联网公司安全运营</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网业务安全"><span class="nav-number">16.1.</span> <span class="nav-text">互联网业务安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全开发流程（SDL）"><span class="nav-number">16.2.</span> <span class="nav-text">安全开发流程（SDL）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全运营"><span class="nav-number">16.3.</span> <span class="nav-text">安全运营</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wendell</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">49.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<br>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("03/15/2019 10:22:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?05d599349e61768582010a6d33f2c57b":"https://jspassport.ssl.qhimg.com/11.0.1.js?05d599349e61768582010a6d33f2c57b";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
